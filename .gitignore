@@ -114,5 +114,3 @@ config.json
 secret.json
 credentials/
 
-# Local scratch files
-text.py
