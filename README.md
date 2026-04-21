@@ -1,3 +1,5 @@
+# Intelligent-contest-robot
+竞赛智能客服机器人 | 大模型+RAG+知识图谱+ViDoRAG+MinerU 驱动的自动化问答服务
 # ContestRobot-web
 
 竞赛机器人 ViDoRAG 问答系统，整合 ViDoRAG 作为后端算法包。
