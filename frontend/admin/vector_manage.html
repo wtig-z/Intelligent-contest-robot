@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>向量管理 - 智能竞赛客服机器人</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h1>智能竞赛客服机器人后台</h1>
+                <span class="role">管理员</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="/admin" class="nav-item">仪表盘</a>
+                <a href="/admin/pdf_manage.html" class="nav-item">文档管理</a>
+                <a href="/admin/indexes_manage.html" class="nav-item">索引与图谱</a>
+                <a href="/admin/tasks_manage.html" class="nav-item">任务控制台</a>
+                <a href="/admin/logs_manage.html" class="nav-item">日志中心</a>
+                <a href="/admin/question_manage.html" class="nav-item">对话历史</a>
+                <a href="/admin/vector_manage.html" class="nav-item active">向量明细</a>
+                <a href="/admin/graphrag_manage.html" class="nav-item">图谱构建</a>
+                <a href="/admin/settings_manage.html" class="nav-item" data-require="admin">系统配置</a>
+                <a href="/admin/exports_manage.html" class="nav-item" data-require="admin">导出报表</a>
+                <a href="/admin/user_manage.html" class="nav-item" data-require="admin">用户权限</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="/volc-kb">返回问答</a> | <a href="#" id="logout">退出</a>
+            </div>
+        </aside>
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>向量管理</h1>
+                <p>构建任务状态由 ingestion 写入数据库；索引文件在数据集目录 <code>bge_ingestion</code> / <code>colqwen_ingestion</code></p>
+            </header>
+            <div class="admin-content">
+                <section class="card">
+                    <h2>构建记录</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>数据集</th>
+                                <th>类型</th>
+                                <th>状态</th>
+                                <th>进度</th>
+                                <th>产物路径</th>
+                                <th>失败原因</th>
+                                <th>更新时间</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vectorList"></tbody>
+                    </table>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/logger.js"></script>
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/admin/common.js"></script>
+    <script src="/static/js/admin/vector_manage.js"></script>
+</body>
+</html>

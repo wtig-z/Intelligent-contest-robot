@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛事管理后台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.5;
+        }
+        /* 容器：控制整体宽度+居中，适配不同屏幕 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        /* 页面标题：强化视觉层级，和前端风格统一 */
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .page-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+        .page-desc {
+            font-size: 14px;
+            color: #718096;
+        }
+
+        /* 卡片通用样式：和前端赛事卡片视觉统一 */
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
+            margin-bottom: 30px;
+        }
+        .card-title {
+            font-size: 18px;
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-weight: 600;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #f5f5f5;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        /* 标题装饰线，和前端卡片装饰条风格统一 */
+        .card-title::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #4299e1, #38b2ac);
+        }
+        .hint {
+            font-size: 13px;
+            color: #718096;
+            font-weight: 400;
+        }
+
+        /* 表单样式优化 */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+        .form-item {
+            margin-bottom: 16px;
+        }
+        .form-item.full-width {
+            grid-column: 1/-1;
+        }
+        .form-item label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #4a5568;
+            font-weight: 500;
+        }
+        .form-item input,
+        .form-item textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background-color: #fff;
+        }
+        .form-item input:focus,
+        .form-item textarea:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+        }
+        .form-item textarea {
+            min-height: 120px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+        /* 必填项标记 */
+        .required::after {
+            content: "*";
+            color: #e53e3e;
+            margin-left: 4px;
+        }
+
+        /* 按钮样式：和前端官网按钮风格统一 */
+        .btn {
+            padding: 10px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #4299e1, #38b2ac);
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(66, 153, 225, 0.2);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+        }
+        .btn-danger {
+            background: linear-gradient(90deg, #e53e3e, #c53030);
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(229, 62, 62, 0.2);
+        }
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
+        }
+        .btn-text {
+            background: transparent;
+            color: #4299e1;
+            padding: 8px 16px;
+        }
+        .btn-text:hover {
+            color: #3182ce;
+            background-color: #f0f8fb;
+        }
+
+        /* 表格样式优化 */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 16px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 720px;
+        }
+        th, td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+        }
+        th {
+            color: #718096;
+            background-color: #f8fafc;
+            font-weight: 500;
+            position: relative;
+        }
+        th::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 16px;
+            background-color: #e2e8f0;
+        }
+        th:last-child::after {
+            display: none;
+        }
+        td {
+            color: #4a5568;
+            vertical-align: middle;
+        }
+        tr:hover td {
+            background-color: #fafafa;
+        }
+
+        /* 空状态提示 */
+        .empty-tip {
+            text-align: center;
+            padding: 60px 0;
+            color: #718096;
+            font-size: 16px;
+        }
+        .empty-tip i {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: block;
+            color: #cbd5e0;
+        }
+
+        /* 操作列样式 */
+        .action-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .card {
+                padding: 20px;
+            }
+            .btn {
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题 -->
+        <div class="page-header">
+            <h1 class="page-title">⚙️ 赛事管理后台</h1>
+            <p class="page-desc">管理赛事信息、维护赛事日历数据</p>
+        </div>
+
+        <!-- 新增/编辑赛事表单 -->
+        <div class="card">
+            <h2 class="card-title">
+                <span>新增赛事</span>
+                <span class="hint" id="evtAdminMsg"></span>
+            </h2>
+            <form id="evtForm">
+                <input type="hidden" id="evtId" value="">
+                <div class="form-grid">
+                    <div class="form-item">
+                        <label class="required" for="evtTitle">赛事名称</label>
+                        <input id="evtTitle" type="text" required placeholder="请输入赛事全称">
+                    </div>
+                    <div class="form-item">
+                        <label class="required" for="evtDate">赛事日期</label>
+                        <input id="evtDate" type="date" required>
+                    </div>
+                    <div class="form-item full-width">
+                        <label for="evtDesc">报名说明</label>
+                        <textarea id="evtDesc" placeholder="请输入赛事报名条件、流程、注意事项等（支持换行）"></textarea>
+                    </div>
+                    <div class="form-item full-width">
+                        <label for="evtUrl">官网链接</label>
+                        <input id="evtUrl" type="url" placeholder="https://xxx.com">
+                    </div>
+                    <div class="form-item full-width">
+                        <label for="evtPdf">赛事通知 PDF（可选）</label>
+                        <input id="evtPdf" type="file" accept="application/pdf,.pdf">
+                        <div class="hint" style="margin-top:8px">保存赛事后可上传/覆盖为该赛事的通知 PDF（下载按钮会出现在前台赛事信息中心）。</div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="evtSubmitBtn">✔️ 保存赛事信息</button>
+                <button type="button" class="btn btn-text" id="evtClearBtn" style="margin-left:10px">清空</button>
+                <a class="btn btn-text" href="/events" target="_blank" rel="noopener" style="margin-left:6px">前台赛事中心</a>
+            </form>
+        </div>
+
+        <!-- 已添加赛事列表 -->
+        <div class="card">
+            <h2 class="card-title">
+                <span>赛事列表管理</span>
+                <span class="hint" id="evtCount"></span>
+            </h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:72px">序号</th>
+                            <th>赛事名称</th>
+                            <th style="width:140px">举办日期</th>
+                            <th style="width:140px">官网链接</th>
+                            <th style="width:220px">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="evtTbody">
+                        <tr><td colspan="5" class="hint">加载中...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/admin_events.js"></script>
+</body>
+</html>
+

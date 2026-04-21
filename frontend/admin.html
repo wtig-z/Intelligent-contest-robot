@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理后台 - 智能竞赛客服机器人</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <main class="admin-main" style="margin:0 auto;max-width:800px;">
+            <header class="admin-header" style="text-align:center;padding-top:60px;">
+                <h1>管理后台</h1>
+                <p>智能竞赛客服机器人系统管理入口</p>
+            </header>
+            <div class="admin-content" style="justify-content:center;">
+                <section class="card" style="max-width:400px;text-align:center;">
+                    <h2>知识库状态</h2>
+                    <p id="kbStatus">加载中...</p>
+                </section>
+                <section class="card" style="max-width:400px;text-align:center;">
+                    <h2>系统信息</h2>
+                    <p>Vidorag-GraphRAG 双引擎问答</p>
+                    <div style="margin-top:16px;">
+                        <a href="/admin/" class="btn-primary" style="text-decoration:none;display:inline-block;">进入管理后台</a>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/admin.js"></script>
+</body>
+</html>

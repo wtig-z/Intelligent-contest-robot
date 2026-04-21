@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能竞赛客服机器人</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <span class="logo-text">智能竞赛客服机器人</span>
+        </div>
+        <div class="sidebar-nav" id="sidebarNav">
+            <div class="nav-item active" data-id="new">
+                <span>新对话</span>
+            </div>
+        </div>
+        <div class="sidebar-footer">
+            <div>快速回答 · 深度检索</div>
+            <a href="/graphrag" class="sidebar-footer-subtle" title="双引擎竞赛问答（GraphRAG）">·</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="content-header">
+            <div class="contest-cascade" id="contestCascade">
+                <span class="contest-cascade-label-prefix">赛事范围</span>
+                <button type="button" class="contest-cascade-trigger" id="contestCascadeBtn" aria-expanded="false" aria-haspopup="listbox" title="选择大类后，在右侧选择具体赛事或整类全部">
+                    <span class="contest-cascade-trigger-text" id="contestCascadeLabel">全部文档</span>
+                    <span class="contest-cascade-caret" aria-hidden="true">▾</span>
+                </button>
+                <div class="contest-cascade-dropdown" id="contestCascadeDropdown" hidden>
+                    <div class="contest-cascade-panel">
+                        <div class="contest-cascade-col contest-cascade-col-left">
+                            <div class="contest-cascade-col-title">类别</div>
+                            <ul class="contest-cascade-list" id="contestCascadeCats" role="listbox"></ul>
+                        </div>
+                        <div class="contest-cascade-col contest-cascade-col-right">
+                            <div class="contest-cascade-col-title" id="contestCascadeRightTitle">选择赛事</div>
+                            <button type="button" class="contest-cascade-all-in-cat" id="contestCascadeAllInCat" hidden>全部本类赛事</button>
+                            <ul class="contest-cascade-list" id="contestCascadeItems"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="user-bar">
+                <button type="button" class="header-share-btn" id="shareBtn" disabled title="分享当前这条问答">分享</button>
+                <span id="username"></span>
+                <a href="/events" title="赛事信息中心">赛事</a>
+                <a href="/history" title="历史记录">历史</a>
+                <a href="/profile" title="个人资料">资料</a>
+                <a href="/change-password" title="修改密码">密码</a>
+                <a href="/admin" title="管理后台">管理</a>
+                <a href="#" id="logout">退出</a>
+            </span>
+        </div>
+        <div class="chat-area" id="chatArea">
+            <div class="welcome" id="welcome">
+                <div class="welcome-inner">
+                    <h1 class="welcome-title">智能竞赛客服机器人</h1>
+                    <p class="welcome-subtitle">👋 点击热门赛事可快速查询</p>
+                    <div class="welcome-input-wrap">
+                        <textarea class="welcome-textarea" id="welcomeInput" placeholder="尽管问..." rows="3"></textarea>
+                        <div class="welcome-bottom-bar">
+                            <div class="welcome-func-btns">
+                                <!-- <button type="button" class="func-btn" data-query="联网搜索相关信息">🌐 联网</button> -->
+                                <button type="button" class="func-btn" data-query="帮我查询基本数据">📋 数据基本查询</button>
+                                <button type="button" class="func-btn" data-query="帮我做数据统计分析">📊 数据统计分析</button>
+                                <button type="button" class="func-btn" data-func="open" title="清空预设文案，改为自由提问">❓ 开放性问题</button>
+                            </div>
+                            <div class="welcome-actions">
+                                <div class="volc-kb-attach-slot">
+                                    <button type="button" class="func-btn volc-kb-attach-btn" id="vkUploadBtnWelcome" title="上传图片（本轮可带图提问）" aria-label="上传图片">🖼️ 上传图片</button>
+                                    <input type="file" id="vkFileInputWelcome" accept="image/jpeg,image/png,image/webp,image/gif" multiple class="volc-kb-file-input" aria-hidden="true">
+                                </div>
+                                <button type="button" id="deepThinkBtnWelcome" class="deep-think-btn" title="开启后会启用更慢但更全面的深度检索（多实体/复杂问题更准确）">深度思考</button>
+                                <button class="welcome-send-btn" id="welcomeSendBtn">➤</button>
+                            </div>
+                        </div>
+                        <div class="volc-kb-image-row volc-kb-preview-row">
+                            <div class="volc-kb-preview" id="vkPreviewWelcome"></div>
+                        </div>
+                    </div>
+                    <div class="welcome-tags" id="welcomeTags"></div>
+                </div>
+            </div>
+        </div>
+        <div class="input-bar" id="inputBar">
+            <div class="chat-composer-outer">
+                <div class="welcome-input-wrap chat-composer-wrap">
+                    <textarea class="welcome-textarea" id="messageInput" placeholder="输入问题..." rows="3" autocomplete="off"></textarea>
+                    <div class="welcome-bottom-bar">
+                        <div class="welcome-func-btns">
+                            <!-- <button type="button" class="func-btn" data-query="联网搜索相关信息">🌐 联网</button> -->
+                            <button type="button" class="func-btn" data-query="帮我查询基本数据">📋 数据基本查询</button>
+                            <button type="button" class="func-btn" data-query="帮我做数据统计分析">📊 数据统计分析</button>
+                            <button type="button" class="func-btn" data-func="open" title="清空预设文案，改为自由提问">❓ 开放性问题</button>
+                        </div>
+                        <div class="welcome-actions">
+                            <div class="volc-kb-attach-slot">
+                                <button type="button" class="func-btn volc-kb-attach-btn" id="vkUploadBtnBar" title="上传图片（本轮可带图提问）" aria-label="上传图片">🖼️ 上传图片</button>
+                                <input type="file" id="vkFileInputBar" accept="image/jpeg,image/png,image/webp,image/gif" multiple class="volc-kb-file-input" aria-hidden="true">
+                            </div>
+                            <button type="button" id="deepThinkBtn" class="deep-think-btn" title="开启后会启用更慢但更全面的深度检索（多实体/复杂问题更准确）">深度思考</button>
+                            <button type="button" class="welcome-send-btn send-btn" id="sendBtn">➤</button>
+                        </div>
+                    </div>
+                    <div class="volc-kb-image-row volc-kb-preview-row">
+                        <div class="volc-kb-preview" id="vkPreviewBar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="imgViewer" class="img-viewer" aria-hidden="true">
+        <a class="img-viewer-btn img-viewer-download" id="imgViewerDownload" download title="下载">⬇</a>
+        <div class="img-viewer-btn img-viewer-close" id="imgViewerClose" title="关闭">&times;</div>
+        <div class="img-viewer-nav img-viewer-prev" id="imgViewerPrev" title="上一张">&lt;</div>
+        <div class="img-viewer-nav img-viewer-next" id="imgViewerNext" title="下一张">&gt;</div>
+        <div class="img-viewer-panel" role="dialog" aria-modal="true">
+            <div class="img-viewer-meta" id="imgViewerMeta"></div>
+            <img id="imgViewerImg" alt="预览图">
+        </div>
+    </div>
+
+    <div id="shareModal" class="share-modal" aria-hidden="true">
+        <div class="share-modal-backdrop" id="shareModalBackdrop"></div>
+        <div class="share-modal-panel" role="dialog" aria-labelledby="shareModalTitle">
+            <button type="button" class="share-modal-close" id="shareModalClose" title="关闭">&times;</button>
+            <h3 class="share-modal-title" id="shareModalTitle">分享对话</h3>
+            <p class="share-modal-hint">复制链接发给他人，对方无需登录即可查看本条问答。</p>
+            <div class="share-modal-preview" id="shareModalPreviewWrap">
+                <img id="shareModalImg" alt="预览" class="share-modal-img" style="display:none">
+            </div>
+            <label class="share-modal-label" for="shareModalUrl">链接</label>
+            <div class="share-modal-url-row">
+                <input type="text" readonly class="share-modal-url-input" id="shareModalUrl" autocomplete="off">
+                <button type="button" class="share-modal-copy" id="shareModalCopy">复制</button>
+            </div>
+            <div class="share-modal-actions">
+                <a class="share-modal-open" id="shareModalOpen" href="#" target="_blank" rel="noopener noreferrer">打开分享页</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/logger.js"></script>
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/volc_kb_chat.js"></script>
+</body>
+</html>

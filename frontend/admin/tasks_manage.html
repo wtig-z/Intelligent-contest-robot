@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>任务控制台 - 智能竞赛客服机器人</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h1>智能竞赛客服机器人后台</h1>
+                <span class="role">管理员</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="/admin" class="nav-item">仪表盘</a>
+                <a href="/admin/pdf_manage.html" class="nav-item">文档管理</a>
+                <a href="/admin/indexes_manage.html" class="nav-item">索引与图谱</a>
+                <a href="/admin/tasks_manage.html" class="nav-item active">任务控制台</a>
+                <a href="/admin/logs_manage.html" class="nav-item">日志中心</a>
+                <a href="/admin/question_manage.html" class="nav-item">对话历史</a>
+                <a href="/admin/vector_manage.html" class="nav-item" data-require="admin">向量明细</a>
+                <a href="/admin/graphrag_manage.html" class="nav-item" data-require="admin">图谱构建</a>
+                <a href="/admin/settings_manage.html" class="nav-item" data-require="admin">系统配置</a>
+                <a href="/admin/exports_manage.html" class="nav-item" data-require="admin">导出报表</a>
+                <a href="/admin/user_manage.html" class="nav-item" data-require="admin">用户权限</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="/volc-kb">返回问答</a> | <a href="#" id="logout">退出</a>
+            </div>
+        </aside>
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>任务调度与中断</h1>
+                <p>当前问答并发、运行中任务、历史记录；管理员可强制取消</p>
+            </header>
+            <div class="admin-content">
+                <section class="card">
+                    <h2>并发与统计</h2>
+                    <pre id="taskStats" class="admin-pre">—</pre>
+                    <button class="btn-primary" id="btnRefreshStats">刷新</button>
+                </section>
+                <section class="card">
+                    <h2>运行中</h2>
+                    <table>
+                        <thead><tr><th>request_id</th><th>用户</th><th>阶段</th><th>赛事/PDF</th><th>预览</th><th>已运行(s)</th><th class="col-admin">操作</th></tr></thead>
+                        <tbody id="runningBody"></tbody>
+                    </table>
+                </section>
+                <section class="card">
+                    <h2>最近历史</h2>
+                    <table>
+                        <thead><tr><th>时间</th><th>request_id</th><th>用户</th><th>状态</th><th>中断</th><th>耗时(ms)</th><th>引擎</th><th>预览</th></tr></thead>
+                        <tbody id="histBody"></tbody>
+                    </table>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/logger.js"></script>
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/admin/common.js"></script>
+    <script src="/static/js/admin/tasks_manage.js"></script>
+</body>
+</html>

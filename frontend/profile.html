@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人资料 - 智能竞赛客服机器人</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/profile.css">
+</head>
+<body class="profile-page">
+    <nav class="profile-nav">
+        <a href="/volc-kb" class="nav-brand">智能竞赛客服机器人</a>
+        <div class="nav-links">
+            <a href="/volc-kb">问答</a>
+            <a href="/history">历史记录</a>
+            <a href="/profile" class="active">个人资料</a>
+            <a href="#" id="logout">退出</a>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+        <div class="profile-sidebar">
+            <div class="profile-avatar-section">
+                <div class="avatar-circle" id="avatarCircle">
+                    <span id="avatarInitial">U</span>
+                </div>
+                <h2 id="profileUsername">用户名</h2>
+                <p class="profile-role" id="profileRole">普通用户</p>
+                <p class="profile-since" id="profileSince">注册于 -</p>
+            </div>
+            <div class="profile-menu">
+                <a href="#basic" class="menu-item active" data-tab="basic">基础信息</a>
+                <a href="#preferences" class="menu-item" data-tab="preferences">检索偏好</a>
+                <a href="#security" class="menu-item" data-tab="security">安全隐私</a>
+                <a href="#stats" class="menu-item" data-tab="stats">数据统计</a>
+            </div>
+        </div>
+
+        <div class="profile-main">
+            <!-- 基础信息 -->
+            <section class="tab-panel active" id="panel-basic">
+                <h3>基础信息</h3>
+                <div class="alert" id="basicAlert"></div>
+                <form id="basicForm">
+                    <div class="form-group">
+                        <label>用户名</label>
+                        <input type="text" id="editUsername" placeholder="用户名">
+                    </div>
+                    <div class="form-group">
+                        <label>手机号</label>
+                        <input type="text" id="editPhone" placeholder="11位手机号">
+                    </div>
+                    <div class="form-group">
+                        <label>累计问答</label>
+                        <input type="text" id="totalQuestions" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>常用赛事</label>
+                        <input type="text" id="topContest" disabled>
+                    </div>
+                    <button type="submit" class="btn-primary">保存修改</button>
+                </form>
+            </section>
+
+            <!-- 检索偏好 -->
+            <section class="tab-panel" id="panel-preferences">
+                <h3>检索偏好设置</h3>
+                <div class="alert" id="prefAlert"></div>
+                <form id="prefForm">
+                    <div class="form-group">
+                        <label>默认赛事</label>
+                        <select id="prefDefaultContest">
+                            <option value="">不指定（全量检索）</option>
+                        </select>
+                        <span class="form-hint">未手动选择赛事时自动使用</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Top-K 召回数 <span class="badge" id="topkValue">10</span></label>
+                        <input type="range" id="prefTopk" min="5" max="20" value="10">
+                        <span class="form-hint">召回页面数量（5-20）</span>
+                    </div>
+                    <div class="form-group">
+                        <label>回答格式</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="answerFormat" value="brief"> 简洁版（答案+核心依据）</label>
+                            <label><input type="radio" name="answerFormat" value="detailed" checked> 详细版（答案+依据+检索过程）</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>GMM 灵敏度 <span class="badge" id="gmmValue">0.5</span></label>
+                        <input type="range" id="prefGmm" min="0" max="1" step="0.1" value="0.5">
+                        <span class="form-hint">高灵敏度=更多候选，低灵敏度=更精准</span>
+                    </div>
+                    <div class="form-group admin-only" id="kmeansGroup" style="display:none">
+                        <label>K-Means 簇数</label>
+                        <input type="number" id="prefKmeans" min="5" max="200" placeholder="自动">
+                        <span class="form-hint">仅管理员可配置</span>
+                    </div>
+                    <button type="submit" class="btn-primary">保存偏好</button>
+                </form>
+            </section>
+
+            <!-- 安全隐私 -->
+            <section class="tab-panel" id="panel-security">
+                <h3>安全与隐私</h3>
+                <div class="security-section">
+                    <div class="security-item">
+                        <div>
+                            <h4>修改密码</h4>
+                            <p>定期更换密码有助于保护账户安全</p>
+                        </div>
+                        <a href="/change-password" class="btn-outline">前往修改</a>
+                    </div>
+                    <div class="security-item">
+                        <div>
+                            <h4>匿名存储问答记录</h4>
+                            <p>开启后问答记录将匿名化存储</p>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" id="privacyAnonymous">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 数据统计 -->
+            <section class="tab-panel" id="panel-stats">
+                <h3>数据统计</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="statTotal">0</div>
+                        <div class="stat-label">累计问答</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="statVisualRatio">0%</div>
+                        <div class="stat-label">视觉类占比</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="statAvgSeeker">0</div>
+                        <div class="stat-label">平均检索轮次</div>
+                    </div>
+                </div>
+                <div class="stats-detail">
+                    <h4>提问类型分布</h4>
+                    <div class="engine-bars">
+                        <div class="engine-bar">
+                            <span class="engine-label">视觉类</span>
+                            <div class="bar-track"><div class="bar-fill query-visual" id="barVisual" style="width:0"></div></div>
+                            <span class="engine-count" id="countVisual">0</span>
+                        </div>
+                        <div class="engine-bar">
+                            <span class="engine-label">纯文类</span>
+                            <div class="bar-track"><div class="bar-fill query-text" id="barText" style="width:0"></div></div>
+                            <span class="engine-count" id="countText">0</span>
+                        </div>
+                    </div>
+                    <h4>常用赛事排行</h4>
+                    <div id="topContestsList" class="top-contests"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="/static/js/logger.js"></script>
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/profile.js"></script>
+</body>
+</html>

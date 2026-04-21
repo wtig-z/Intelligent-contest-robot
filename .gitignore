@@ -1,0 +1,118 @@
+# =========================
+# Python cache / build
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.so
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Python packaging / build artifacts
+dist/
+build/
+*.egg-info/
+*.egg
+eggs/
+parts/
+bin/
+var/
+sdist/
+*.whl
+
+# =========================
+# Frontend / Node
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.node
+
+# =========================
+# IDE / editor / OS
+# =========================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# =========================
+# Logs / runtime files
+# =========================
+logs/
+*.log
+*.pid
+*.out
+tmp/
+temp/
+*.tmp
+*.cache
+
+
+# =========================
+# Data / DB / model files
+# =========================
+data/
+!data/.gitkeep
+datasets/
+output/
+models/
+checkpoints/
+weights/
+artifacts/
+chroma/
+faiss/
+vector_store/
+knowledge_graph/
+qdrant/
+milvus/
+weaviate/
+pinecone/
+lancedb/
+_vector_db/
+
+*.sqlite
+*.sqlite3
+*.db
+*.pth
+*.pkl
+*.h5
+*.ckpt
+*.pt
+*.bin
+*.onnx
+*.safetensors
+*.gguf
+*.ggml
+*.tflite
+*.pb
+*.joblib
+*.pdf.lock
+
+# =========================
+# Secrets / environment files
+# =========================
+.env
+.env.local
+.env.*.local
+config.json
+secret.json
+credentials/
+
+# Local scratch files
+text.py

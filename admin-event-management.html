@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛事管理 - 后台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', 'Arial', sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        .page-title {
+            text-align: left;
+            margin-bottom: 30px;
+            color: #2d3748;
+            font-weight: 600;
+            position: relative;
+            padding-left: 15px;
+        }
+        .page-title::before {
+            content: "";
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, #4299e1, #38b2ac);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 2px;
+        }
+        .admin-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        .form-title {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .event-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4a5568;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+        }
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .submit-btn {
+            grid-column: 1 / -1;
+            padding: 12px 20px;
+            background: linear-gradient(90deg, #4299e1, #38b2ac);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .submit-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+        /* 已添加赛事列表 */
+        .events-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .events-table th, .events-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .events-table th {
+            background-color: #f8fafc;
+            color: #2d3748;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .events-table td {
+            color: #4a5568;
+            font-size: 14px;
+        }
+        .table-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .action-btn {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .edit-btn {
+            background-color: #e8f4f8;
+            color: #4299e1;
+        }
+        .delete-btn {
+            background-color: #fef7fb;
+            color: #e53e3e;
+        }
+        .edit-btn:hover {
+            background-color: #d1e7dd;
+        }
+        .delete-btn:hover {
+            background-color: #f8d7da;
+        }
+        .official-link {
+            color: #4299e1;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .official-link:hover {
+            text-decoration: underline;
+        }
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .event-form {
+                grid-template-columns: 1fr;
+            }
+            .events-table th:nth-child(3), .events-table td:nth-child(3) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <h2 class="page-title">赛事管理&lt;/h2&gt;
+
+        <!-- 新增赛事表单 -->
+        <div class="admin-card">
+            <h3 class="form-title">新增赛事</h3>
+            <form action="/admin/event/add" method="post" class="event-form">
+                <div class="form-group">
+                    <label for="title">赛事名称 *</label>
+                    <input type="text" id="title" name="title" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="event_date">赛事日期 *</label>
+                    <input type="date" id="event_date" name="event_date" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="official_url">赛事官网链接</label>
+                    <input type="url" id="official_url" name="official_url" class="form-control" placeholder="https://xxx.com">
+                </div>
+                <div class="form-group">
+                    <label for="description">报名说明</label>
+                    <textarea id="description" name="description" class="form-control" placeholder="请输入赛事报名说明、注意事项等..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">添加赛事</button>
+            </form&gt;
+        &lt;/div&gt;
+
+        <!-- 已添加赛事列表 -->
+        <div class="admin-card">
+            <h3 class="form-title">已添加赛事</h3>
+            {% if events %}
+                <table class="events-table">
+                    <thead>
+                        <tr>
+                            <th>赛事名称</th>
+                            <th>赛事日期</th>
+                            <th>官网链接</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for e in events %}
+                        <tr>
+                            <td>{{ e.title }}</td>
+                            <td>{{ e.event_date }}</td>
+                            <td><a href="{{ e.official_url }}" target="_blank" class="official-link">访问官网</a></td>
+                            <td>
+                                <div class="table-actions">
+                                    <button class="action-btn edit-btn">编辑</button>
+                                    <button class="action-btn delete-btn">删除</button>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div style="text-align: center; padding: 40px; color: #718096;">暂无赛事数据，请添加赛事</div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

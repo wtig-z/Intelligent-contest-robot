@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识图谱管理 - 智能竞赛客服机器人</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h1>智能竞赛客服机器人后台</h1>
+                <span class="role">管理员</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="/admin" class="nav-item">仪表盘</a>
+                <a href="/admin/pdf_manage.html" class="nav-item">文档管理</a>
+                <a href="/admin/indexes_manage.html" class="nav-item">索引与图谱</a>
+                <a href="/admin/tasks_manage.html" class="nav-item">任务控制台</a>
+                <a href="/admin/logs_manage.html" class="nav-item">日志中心</a>
+                <a href="/admin/question_manage.html" class="nav-item">对话历史</a>
+                <a href="/admin/vector_manage.html" class="nav-item">向量明细</a>
+                <a href="/admin/graphrag_manage.html" class="nav-item active">图谱构建</a>
+                <a href="/admin/settings_manage.html" class="nav-item" data-require="admin">系统配置</a>
+                <a href="/admin/exports_manage.html" class="nav-item" data-require="admin">导出报表</a>
+                <a href="/admin/user_manage.html" class="nav-item" data-require="admin">用户权限</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="/volc-kb">返回问答</a> | <a href="#" id="logout">退出</a>
+            </div>
+        </aside>
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>GraphRAG 知识图谱</h1>
+                <p>管理知识图谱索引构建与检索测试</p>
+            </header>
+            <div class="admin-content">
+                <section class="card">
+                    <h2>索引状态</h2>
+                    <div id="statusInfo" style="margin-bottom:18px;">加载中...</div>
+                    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+                        <select id="contestSelect">
+                            <option value="">全量（所有赛事）</option>
+                        </select>
+                        <button class="btn-primary" id="buildBtn">构建索引</button>
+                        <button class="btn-primary" id="buildFullBtn" title="包含：融合文本 → 生成 graphrag/input → 构建索引（较慢）">完整构建（含准备）</button>
+                        <span id="buildStatus" class="text-muted" style="font-size:13px;"></span>
+                    </div>
+                    <pre id="buildOut" class="admin-pre" style="margin-top:10px; max-height:240px; overflow:auto; display:none;">—</pre>
+                </section>
+                <section class="card">
+                    <h2>检索测试</h2>
+                    <div style="display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+                        <input type="text" id="testQuery" placeholder="输入测试问题..." style="flex:1;min-width:200px;">
+                        <select id="testMode">
+                            <option value="auto">自动（降级执行）</option>
+                            <option value="basic">Basic</option>
+                            <option value="local">Local</option>
+                            <option value="global">Global</option>
+                        </select>
+                        <button type="button" class="btn-primary" id="testBtn">检索</button>
+                    </div>
+                    <div id="testResult" style="background:#f7f8fa;border:1px solid #e5e6eb;border-radius:10px;padding:18px;min-height:60px;font-size:14px;line-height:1.65;color:#1d2129;white-space:pre-wrap;">
+                        在上方输入问题后点击"检索"进行测试
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/logger.js"></script>
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/admin/common.js"></script>
+    <script>
+        /** 检索测试区状态：切换后台其它页面再返回时不丢失问题与结果 */
+        var GRAPH_TEST_STATE_KEY = 'admin_graphrag_test_v1';
+        function _graphTestLoadState() {
+            try {
+                var raw = sessionStorage.getItem(GRAPH_TEST_STATE_KEY);
+                if (!raw) return null;
+                return JSON.parse(raw);
+            } catch (e) {
+                return null;
+            }
+        }
+        function _graphTestSaveState(partial) {
+            try {
+                var cur = _graphTestLoadState() || {};
+                if (partial && typeof partial === 'object') {
+                    Object.keys(partial).forEach(function (k) {
+                        cur[k] = partial[k];
+                    });
+                }
+                cur.updatedAt = Date.now();
+                sessionStorage.setItem(GRAPH_TEST_STATE_KEY, JSON.stringify(cur));
+            } catch (e) {}
+        }
+        function _graphTestSnapshotFromDom() {
+            var qEl = document.getElementById('testQuery');
+            var mEl = document.getElementById('testMode');
+            var cEl = document.getElementById('contestSelect');
+            var rEl = document.getElementById('testResult');
+            var st = _graphTestLoadState() || {};
+            return {
+                query: qEl ? qEl.value : '',
+                mode: mEl ? mEl.value : '',
+                contestId: cEl ? (cEl.value || '') : '',
+                resultText: rEl ? rEl.textContent : '',
+                searchJobId: st.searchJobId != null ? st.searchJobId : ''
+            };
+        }
+
+        function _formatGraphSearchResult(data) {
+            data = data || {};
+            var text = '模式: ' + (data.mode || '-') + '\n状态: ' + (data.status || '-') + '\n\n';
+            text += data.answer || '（无回答）';
+            if (data.entities_used) text += '\n\n实体命中: ' + data.entities_used;
+            if (data.communities_used) text += '\n社区命中: ' + data.communities_used;
+            return text;
+        }
+
+        var _searchPollTimer = null;
+        function stopSearchPoll() {
+            if (_searchPollTimer) {
+                try { clearInterval(_searchPollTimer); } catch (e) {}
+                _searchPollTimer = null;
+            }
+        }
+
+        function pollSearchJob(jobId) {
+            if (!jobId) return;
+            stopSearchPoll();
+            var client = window.axios.create({
+                baseURL: window.API_BASE || '',
+                withCredentials: true,
+                timeout: 30000,
+                headers: getAuthHeaders()
+            });
+            var tick = function () {
+                client
+                    .get('/api/admin/graphrag/search-jobs/' + encodeURIComponent(jobId))
+                    .then(function (r) { return r.data; })
+                    .then(function (d) {
+                        if (!d || d.code !== 0) return;
+                        var o = d.data || {};
+                        var rEl = document.getElementById('testResult');
+                        if (o.status === 'running') {
+                            var line = '检索中…（服务端执行，切换其它后台页面不会中断）已用时 ' + (o.elapsed_sec != null ? o.elapsed_sec : 0) + 's';
+                            if (rEl) rEl.textContent = line;
+                            _graphTestSaveState({
+                                searchJobId: jobId,
+                                query: document.getElementById('testQuery').value,
+                                mode: document.getElementById('testMode').value,
+                                contestId: document.getElementById('contestSelect').value || '',
+                                resultText: line
+                            });
+                            return;
+                        }
+                        stopSearchPoll();
+                        if (o.status === 'success') {
+                            var txt = _formatGraphSearchResult(o.result || {});
+                            if (rEl) rEl.textContent = txt;
+                            _graphTestSaveState({
+                                searchJobId: '',
+                                query: document.getElementById('testQuery').value,
+                                mode: document.getElementById('testMode').value,
+                                contestId: document.getElementById('contestSelect').value || '',
+                                resultText: txt
+                            });
+                        } else {
+                            var err = '检索失败: ' + (o.error || '未知错误');
+                            if (rEl) rEl.textContent = err;
+                            _graphTestSaveState({
+                                searchJobId: '',
+                                query: document.getElementById('testQuery').value,
+                                mode: document.getElementById('testMode').value,
+                                contestId: document.getElementById('contestSelect').value || '',
+                                resultText: err
+                            });
+                        }
+                    })
+                    .catch(function (e) {
+                        stopSearchPoll();
+                        var rEl = document.getElementById('testResult');
+                        var msg = '获取检索结果失败: ' + (e && e.message ? e.message : e);
+                        if (e && e.response && e.response.status === 404) {
+                            msg = '检索任务已过期或服务已重启。请重新点击「检索」。';
+                        }
+                        if (rEl) rEl.textContent = msg;
+                        _graphTestSaveState({ searchJobId: '', resultText: msg });
+                    });
+            };
+            tick();
+            _searchPollTimer = setInterval(tick, 1200);
+        }
+
+        function loadStatus() {
+            var cid = document.getElementById('contestSelect').value || undefined;
+            var url = '/api/admin/graphrag/status' + (cid ? '?contest_id=' + encodeURIComponent(cid) : '');
+            window.axios.create({ baseURL: window.API_BASE || '', withCredentials: true, timeout: 30000, headers: getAuthHeaders() })
+                .get(url)
+                .then(function(r) { return r.data; })
+                .then(function(d) {
+                    var data = d.data || {};
+                    var html = '';
+                    if (data.available) {
+                        html = '<div class="stats-row" style="margin-bottom:0;">'
+                            + '<div class="stat-card purple" style="min-width:120px;max-width:160px;padding:14px 18px;"><span class="number" style="font-size:22px;">' + (data.entities||0) + '</span><small>实体</small></div>'
+                            + '<div class="stat-card blue" style="min-width:120px;max-width:160px;padding:14px 18px;"><span class="number" style="font-size:22px;">' + (data.relationships||0) + '</span><small>关系</small></div>'
+                            + '<div class="stat-card green" style="min-width:120px;max-width:160px;padding:14px 18px;"><span class="number" style="font-size:22px;">' + (data.communities||0) + '</span><small>社区</small></div>'
+                            + '<div class="stat-card" style="min-width:120px;max-width:160px;padding:14px 18px;border-color:#e5e6eb;"><span class="number" style="font-size:22px;">' + (data.text_units||0) + '</span><small>文本块</small></div>'
+                            + '</div>';
+                    } else {
+                        html = '<span style="color:#f53f3f;font-weight:500;">索引未构建</span>';
+                    }
+                    if (data.build_running) html += '<br><span style="color:#d48806;margin-top:8px;display:inline-block;">构建任务进行中...</span>';
+                    document.getElementById('statusInfo').innerHTML = html;
+                })
+                .catch(function() { document.getElementById('statusInfo').textContent = '获取状态失败'; });
+        }
+        (function _graphTestRestoreEarly() {
+            var st = _graphTestLoadState();
+            if (!st) return;
+            var qEl = document.getElementById('testQuery');
+            var mEl = document.getElementById('testMode');
+            var rEl = document.getElementById('testResult');
+            if (st.query != null && qEl) qEl.value = st.query;
+            if (st.mode != null && mEl) mEl.value = st.mode;
+            if (st.searchJobId) {
+                if (rEl) rEl.textContent = '检索在后台进行中，正在同步结果…（可切换页面，服务端会继续跑）';
+                setTimeout(function () { pollSearchJob(st.searchJobId); }, 50);
+            } else if (st.resultText != null && rEl) {
+                if (st.resultText === '检索中...') {
+                    rEl.textContent = '上次检索未完成。请重新点击「检索」。';
+                } else {
+                    rEl.textContent = st.resultText;
+                }
+            }
+        })();
+
+        loadStatus();
+        document.getElementById('contestSelect').addEventListener('change', function () {
+            loadStatus();
+            _graphTestSaveState(_graphTestSnapshotFromDom());
+        });
+
+        (window.CR && window.CR.Api ? window.CR.Api.contests() : contestsApi()).then(function(data) {
+            var sel = document.getElementById('contestSelect');
+            (data.contests || []).forEach(function(c) {
+                var opt = document.createElement('option');
+                opt.value = c.id;
+                opt.textContent = c.name || c.id;
+                sel.appendChild(opt);
+            });
+            var st = _graphTestLoadState();
+            if (st && st.contestId != null && st.contestId !== '') {
+                sel.value = st.contestId;
+            }
+            loadStatus();
+        });
+
+        document.getElementById('testQuery').addEventListener('input', function () {
+            _graphTestSaveState(_graphTestSnapshotFromDom());
+        });
+        document.getElementById('testMode').addEventListener('change', function () {
+            _graphTestSaveState(_graphTestSnapshotFromDom());
+        });
+        window.addEventListener('beforeunload', function () {
+            _graphTestSaveState(_graphTestSnapshotFromDom());
+        });
+
+        document.getElementById('buildBtn').addEventListener('click', function() {
+            var cid = document.getElementById('contestSelect').value || undefined;
+            var body = {};
+            if (cid) body.contest_id = cid;
+            document.getElementById('buildStatus').textContent = '启动中...';
+            window.axios.create({ baseURL: window.API_BASE || '', withCredentials: true, timeout: 30000, headers: getAuthHeaders() })
+            .post('/api/admin/graphrag/build', body)
+            .then(function(r) { return r.data; })
+            .then(function(d) {
+                document.getElementById('buildStatus').textContent = d.message || '已启动';
+                setTimeout(loadStatus, 3000);
+            })
+            .catch(function(e) { document.getElementById('buildStatus').textContent = '失败: ' + e.message; });
+        });
+
+        document.getElementById('testBtn').addEventListener('click', function() {
+            var query = document.getElementById('testQuery').value.trim();
+            if (!query) { alert('请输入测试问题'); return; }
+            var cid = document.getElementById('contestSelect').value || undefined;
+            var mode = document.getElementById('testMode').value;
+            stopSearchPoll();
+            document.getElementById('testResult').textContent = '正在提交检索任务…';
+            _graphTestSaveState({
+                searchJobId: '',
+                query: document.getElementById('testQuery').value,
+                mode: mode,
+                contestId: document.getElementById('contestSelect').value || '',
+                resultText: '正在提交检索任务…'
+            });
+            window.axios.create({ baseURL: window.API_BASE || '', withCredentials: true, timeout: 60000, headers: getAuthHeaders() })
+            .post('/api/admin/graphrag/search-test', { query: query, contest_id: cid, mode: mode, async: true })
+            .then(function(r) { return r.data; })
+            .then(function(d) {
+                var inner = d.data || {};
+                if (!inner.job_id) {
+                    document.getElementById('testResult').textContent = '未返回任务 id，请改用同步接口或检查服务端';
+                    return;
+                }
+                _graphTestSaveState({
+                    searchJobId: inner.job_id,
+                    query: document.getElementById('testQuery').value,
+                    mode: mode,
+                    contestId: document.getElementById('contestSelect').value || '',
+                    resultText: '检索中…'
+                });
+                pollSearchJob(inner.job_id);
+            })
+            .catch(function(e) {
+                document.getElementById('testResult').textContent = '提交检索失败: ' + (e && e.message ? e.message : e);
+                _graphTestSaveState({ searchJobId: '', resultText: document.getElementById('testResult').textContent });
+            });
+        });
+
+        var _pollTimer = null;
+        function poll(jobId) {
+            if (!jobId) return;
+            var pre = document.getElementById('buildOut');
+            if (pre) { pre.style.display = ''; pre.textContent = '任务已启动：' + jobId + '\n等待输出…'; }
+            if (_pollTimer) { try { clearInterval(_pollTimer); } catch (e) {} }
+            _pollTimer = setInterval(function() {
+                window.axios.create({ baseURL: window.API_BASE || '', withCredentials: true, timeout: 30000, headers: getAuthHeaders() })
+                    .get('/api/admin/graphrag/jobs/' + encodeURIComponent(jobId))
+                    .then(function(r){ return r.data; })
+                    .then(function(d){
+                        if (!d || d.code !== 0) return;
+                        var o = d.data || {};
+                        var head = '[任务] ' + (o.job_id || jobId) + ' | 状态: ' + (o.status || '-') + ' | 用时: ' + ((o.elapsed_sec!=null)?(o.elapsed_sec+'s'):'-');
+                        var lines = (o.lines && o.lines.length) ? o.lines.slice(-140).join('\n') : '（暂无输出）';
+                        if (pre) pre.textContent = head + '\n\n' + lines;
+                        if (o.status === 'success' || o.status === 'error') {
+                            try { clearInterval(_pollTimer); } catch (e) {}
+                            _pollTimer = null;
+                            loadStatus();
+                        }
+                    })
+                    .catch(function(){
+                        try { clearInterval(_pollTimer); } catch (e) {}
+                        _pollTimer = null;
+                        if (pre) pre.textContent = '无法获取进度（服务可能已重启）';
+                    });
+            }, 1500);
+        }
+
+        document.getElementById('buildFullBtn').addEventListener('click', function() {
+            document.getElementById('buildStatus').textContent = '启动中...';
+            if (!confirm('确定执行完整构建吗？这会比较慢（含数据准备+构建索引）。')) return;
+            window.axios.create({ baseURL: window.API_BASE || '', withCredentials: true, timeout: 30000, headers: getAuthHeaders() })
+            .post('/api/admin/graphrag/build-full', { dataset: 'CompetitionDataset', method: 'standard' })
+            .then(function(r) { return r.data; })
+            .then(function(d) {
+                document.getElementById('buildStatus').textContent = d.message || '已启动';
+                if (d.data && d.data.job_id) poll(d.data.job_id);
+            })
+            .catch(function(e) { document.getElementById('buildStatus').textContent = '失败: ' + e.message; });
+        });
+    </script>
+</body>
+</html>

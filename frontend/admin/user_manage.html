@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户权限 - 智能竞赛客服机器人</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h1>智能竞赛客服机器人后台</h1>
+                <span class="role">管理员</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="/admin" class="nav-item">仪表盘</a>
+                <a href="/admin/pdf_manage.html" class="nav-item">文档管理</a>
+                <a href="/admin/indexes_manage.html" class="nav-item">索引与图谱</a>
+                <a href="/admin/tasks_manage.html" class="nav-item">任务控制台</a>
+                <a href="/admin/logs_manage.html" class="nav-item">日志中心</a>
+                <a href="/admin/question_manage.html" class="nav-item">对话历史</a>
+                <a href="/admin/vector_manage.html" class="nav-item" data-require="admin">向量明细</a>
+                <a href="/admin/graphrag_manage.html" class="nav-item" data-require="admin">图谱构建</a>
+                <a href="/admin/settings_manage.html" class="nav-item" data-require="admin">系统配置</a>
+                <a href="/admin/exports_manage.html" class="nav-item" data-require="admin">导出报表</a>
+                <a href="/admin/user_manage.html" class="nav-item active" data-require="admin">用户权限</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="/volc-kb">返回问答</a> | <a href="#" id="logout">退出</a>
+            </div>
+        </aside>
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>用户与权限</h1>
+                <p>角色：admin 全功能（含上传与索引构建）；viewer 仅浏览后台；user 前台用户</p>
+            </header>
+            <div class="admin-content">
+                <section class="card">
+                    <h2>用户列表</h2>
+                    <table>
+                        <thead><tr><th>ID</th><th>用户名</th><th>手机号</th><th>角色</th><th>调整</th></tr></thead>
+                        <tbody id="userList"></tbody>
+                    </table>
+                </section>
+                <section class="card">
+                    <h2>忘记密码申请（待处理）</h2>
+                    <p class="admin-hint">用户在前台提交手机号后在此显示，点击「重置并发短信」将密码重置为默认密码并短信通知用户。</p>
+                    <table>
+                        <thead><tr><th>ID</th><th>手机号</th><th>对应用户</th><th>申请时间</th><th>操作</th></tr></thead>
+                        <tbody id="resetRequestList"></tbody>
+                    </table>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/logger.js"></script>
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/admin/common.js"></script>
+    <script src="/static/js/admin/user_manage.js"></script>
+</body>
+</html>

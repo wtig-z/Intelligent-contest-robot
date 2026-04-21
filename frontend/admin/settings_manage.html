@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系统配置 - 智能竞赛客服机器人</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h1>智能竞赛客服机器人后台</h1>
+                <span class="role">管理员</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="/admin" class="nav-item">仪表盘</a>
+                <a href="/admin/pdf_manage.html" class="nav-item">文档管理</a>
+                <a href="/admin/indexes_manage.html" class="nav-item">索引与图谱</a>
+                <a href="/admin/tasks_manage.html" class="nav-item">任务控制台</a>
+                <a href="/admin/logs_manage.html" class="nav-item">日志中心</a>
+                <a href="/admin/question_manage.html" class="nav-item">对话历史</a>
+                <a href="/admin/vector_manage.html" class="nav-item" data-require="admin">向量明细</a>
+                <a href="/admin/graphrag_manage.html" class="nav-item" data-require="admin">图谱构建</a>
+                <a href="/admin/settings_manage.html" class="nav-item active" data-require="admin">系统配置</a>
+                <a href="/admin/exports_manage.html" class="nav-item" data-require="admin">导出报表</a>
+                <a href="/admin/user_manage.html" class="nav-item" data-require="admin">用户权限</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="/volc-kb">返回问答</a> | <a href="#" id="logout">退出</a>
+            </div>
+        </aside>
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>系统配置中心</h1>
+                <p>模型与功能开关（密钥仅管理员可见；落盘 data/runtime_config.json）</p>
+            </header>
+            <div class="admin-content">
+                <section class="card">
+                    <h2>当前配置</h2>
+                    <form id="cfgForm">
+                        <p><label>temperature <input name="temperature" type="number" step="0.01"></label></p>
+                        <p><label>top_p <input name="top_p" type="number" step="0.01"></label></p>
+                        <p><label>max_tokens <input name="max_tokens" type="number"></label></p>
+                        <p><label>log_capacity <input name="log_capacity" type="number"></label></p>
+                        <p><label>vector_recall_topk <input name="vector_recall_topk" type="number"></label></p>
+                        <p><label>graphrag_mode_default <input name="graphrag_mode_default"></label></p>
+                        <p><label><input name="show_images" id="show_images" type="checkbox"> 图片展示</label></p>
+                        <p><label><input name="ocr_enabled" id="ocr_enabled" type="checkbox"> OCR 开关</label></p>
+                        <p><label><input name="kb_update_graphrag_input" id="kb_update_graphrag_input" type="checkbox"> 更新知识库时同步生成 GraphRAG 输入（graphrag/input）</label></p>
+                        <p><label><input name="kb_generate_vlm_box_images" id="kb_generate_vlm_box_images" type="checkbox"> 更新知识库时生成画框质检图（img_with_boxes_vlmocr）</label></p>
+                        <p><label>qa_interrupt_timeout_sec <input name="qa_interrupt_timeout_sec" type="number"></label></p>
+                        <p><label>DashScope API Key <input name="dashscope_api_key" type="password" autocomplete="off" placeholder="留空则不修改"></label></p>
+                        <p><label>OCR API Key <input name="ocr_api_key" type="password" autocomplete="off" placeholder="留空则不修改"></label></p>
+                        <button type="submit" class="btn-primary">保存</button>
+                    </form>
+                    <pre id="cfgRaw" class="admin-pre" style="margin-top:12px;">—</pre>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/logger.js"></script>
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/admin/common.js"></script>
+    <script src="/static/js/admin/settings_manage.js"></script>
+</body>
+</html>

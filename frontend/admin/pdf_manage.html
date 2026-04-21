@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文档管理 - 智能竞赛客服机器人</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h1>智能竞赛客服机器人后台</h1>
+                <span class="role">管理员</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="/admin" class="nav-item">仪表盘</a>
+                <a href="/admin/pdf_manage.html" class="nav-item active">文档管理</a>
+                <a href="/admin/indexes_manage.html" class="nav-item">索引与图谱</a>
+                <a href="/admin/tasks_manage.html" class="nav-item">任务控制台</a>
+                <a href="/admin/logs_manage.html" class="nav-item">日志中心</a>
+                <a href="/admin/question_manage.html" class="nav-item">对话历史</a>
+                <a href="/admin/vector_manage.html" class="nav-item" data-require="admin">向量明细</a>
+                <a href="/admin/graphrag_manage.html" class="nav-item" data-require="admin">图谱构建</a>
+                <a href="/admin/settings_manage.html" class="nav-item" data-require="admin">系统配置</a>
+                <a href="/admin/exports_manage.html" class="nav-item" data-require="admin">导出报表</a>
+                <a href="/admin/user_manage.html" class="nav-item" data-require="admin">用户权限</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="/volc-kb">返回问答</a> | <a href="#" id="logout">退出</a>
+            </div>
+        </aside>
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>文档管理</h1>
+                <p>竞赛 PDF 上传、解析管线状态、预览与重新解析</p>
+            </header>
+            <div class="admin-content">
+                <section class="card" id="uploadSection">
+                    <h2>上传与更新知识库</h2>
+                    <div class="admin-toolbar-row" style="margin-bottom:10px; flex-wrap:wrap;">
+                        <input type="file" id="pdfFile" accept=".pdf" style="width:320px; max-width:320px;">
+                        <button type="button" class="btn-primary" id="uploadBtn">上传单个 PDF</button>
+                    </div>
+                    <div class="admin-toolbar-row" style="margin-bottom:10px; flex-wrap:wrap;">
+                        <input type="file" id="pdfFiles" accept=".pdf" multiple style="width:320px; max-width:320px;">
+                        <button type="button" class="btn-primary" id="batchUploadBtn">批量上传</button>
+                    </div>
+                    <div class="admin-toolbar-row" style="margin-bottom:12px; flex-wrap:wrap;">
+                        <button type="button" class="btn-primary" id="updateKbBtn">一键更新知识库</button>
+                    </div>
+                    <div class="admin-toolbar-row" style="margin-bottom:12px; flex-wrap:wrap;">
+                        <span aria-hidden="true" style="display:inline-block; width:320px;"></span>
+                        <button type="button" class="btn-primary" id="rebuildStructBtn" title="仅重建结构化表 competition_structs（不跑 OCR/向量），用于 TSV 改动后快速同步">仅重建结构化表</button>
+                    </div>
+                    <div id="kbJobProgress" style="margin-top:10px; display:none;">
+                        <div id="kbJobProgressLabel" style="font-size:13px;color:#4e5969;margin-bottom:8px;">—</div>
+                        <div style="height:10px;background:#e5e6eb;border-radius:999px;overflow:hidden;">
+                            <div id="kbJobProgressBar" style="height:10px;width:0%;background:linear-gradient(90deg,#36a3ff,#1677ff);transition:width 0.25s ease;"></div>
+                        </div>
+                    </div>
+                    <pre id="kbJobOut" class="admin-pre" style="margin-top:10px; max-height:220px; overflow:auto; display:none;">—</pre>
+                    <p class="admin-hint">上传保存文件后，点击「一键更新知识库」触发 OCR 与向量入库；覆盖错误 PDF 后可对单行点「重新解析」。</p>
+                </section>
+                <section class="card">
+                    <h2>文档列表</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>文件名</th>
+                                <th>赛事名称</th>
+                                <th>库状态</th>
+                                <th>OCR/文本</th>
+                                <th>更新时间</th>
+                                <th>创建时间</th>
+                                <th>预览与操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pdfList"></tbody>
+                    </table>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/logger.js"></script>
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/admin/common.js"></script>
+    <script src="/static/js/admin/pdf_manage.js"></script>
+</body>
+</html>

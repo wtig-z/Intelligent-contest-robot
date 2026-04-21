@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分享 · 智能竞赛客服机器人</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body class="share-landing-body">
+    <div class="share-landing" id="shareRoot">
+        <p class="share-landing-loading" id="shareLoading">加载中…</p>
+        <p class="share-landing-error" id="shareError" style="display:none"></p>
+        <article class="share-landing-card" id="shareCard" style="display:none">
+            <header class="share-landing-header">
+                <span class="share-landing-brand">智能竞赛客服机器人</span>
+            </header>
+            <figure class="share-landing-figure" id="shareFigure" style="display:none">
+                <img id="sharePreviewImg" alt="回答依据预览">
+            </figure>
+            <section class="share-block">
+                <h2 class="share-block-title">问题</h2>
+                <div class="share-q" id="shareQ"></div>
+            </section>
+            <section class="share-block">
+                <h2 class="share-block-title">回答</h2>
+                <div class="share-a chat-content" id="shareA"></div>
+            </section>
+        </article>
+    </div>
+    <script>window.API_BASE = window.API_BASE || '';</script>
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/share_landing.js"></script>
+</body>
+</html>

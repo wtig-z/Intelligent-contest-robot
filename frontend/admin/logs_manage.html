@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日志中心 - 智能竞赛客服机器人</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h1>智能竞赛客服机器人后台</h1>
+                <span class="role">管理员</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="/admin" class="nav-item">仪表盘</a>
+                <a href="/admin/pdf_manage.html" class="nav-item">文档管理</a>
+                <a href="/admin/indexes_manage.html" class="nav-item">索引与图谱</a>
+                <a href="/admin/tasks_manage.html" class="nav-item">任务控制台</a>
+                <a href="/admin/logs_manage.html" class="nav-item active">日志中心</a>
+                <a href="/admin/question_manage.html" class="nav-item">对话历史</a>
+                <a href="/admin/vector_manage.html" class="nav-item" data-require="admin">向量明细</a>
+                <a href="/admin/graphrag_manage.html" class="nav-item" data-require="admin">图谱构建</a>
+                <a href="/admin/settings_manage.html" class="nav-item" data-require="admin">系统配置</a>
+                <a href="/admin/exports_manage.html" class="nav-item" data-require="admin">导出报表</a>
+                <a href="/admin/user_manage.html" class="nav-item" data-require="admin">用户权限</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="/volc-kb">返回问答</a> | <a href="#" id="logout">退出</a>
+            </div>
+        </aside>
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>日志中心</h1>
+                <p>内存缓冲与按天主日志检索；ERROR 行高亮；管理员可下载归档</p>
+            </header>
+            <div class="admin-content">
+                <section class="card">
+                    <h2>筛选</h2>
+                    <div class="admin-toolbar-row">
+                        <label>关键词 <input type="text" id="logQ" placeholder="如 GraphRAG"></label>
+                        <label>级别 <select id="logLevel"><option value="">全部</option><option>INFO</option><option>WARNING</option><option>ERROR</option></select></label>
+                        <label>条数 <input type="number" id="logTail" value="400" min="50" max="5000" class="admin-input-narrow"></label>
+                        <button type="button" class="btn-primary" id="btnLoadBuf">加载内存缓冲</button>
+                    </div>
+                    <div id="logView" class="log-view" style="margin-top:12px;"></div>
+                </section>
+                <section class="card">
+                    <h2>按天文件</h2>
+                    <div class="admin-toolbar-row">
+                        <label>日期 <input type="date" id="logDate"></label>
+                        <label>关键词 <input type="text" id="fileQ"></label>
+                        <button type="button" class="btn-primary" id="btnLoadFile">读取文件</button>
+                        <button type="button" class="btn-primary" id="btnDownload" data-require="admin" style="display:none;">下载当天日志</button>
+                    </div>
+                    <pre id="fileView" class="admin-pre" style="margin-top:12px;max-height:360px;">—</pre>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/logger.js"></script>
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/admin/common.js"></script>
+    <script src="/static/js/admin/logs_manage.js"></script>
+</body>
+</html>

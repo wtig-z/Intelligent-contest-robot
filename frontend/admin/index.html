@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理后台 - 智能竞赛客服机器人</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h1>智能竞赛客服机器人后台</h1>
+                <span class="role">管理员</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="/admin" class="nav-item active">仪表盘</a>
+                <a href="/admin/pdf_manage.html" class="nav-item">文档管理</a>
+                <a href="/admin/indexes_manage.html" class="nav-item">索引与图谱</a>
+                <a href="/admin/tasks_manage.html" class="nav-item">任务控制台</a>
+                <a href="/admin/logs_manage.html" class="nav-item">日志中心</a>
+                <a href="/admin/question_manage.html" class="nav-item">对话历史</a>
+                <a href="/admin/events.html" class="nav-item">赛事管理</a>
+                <a href="/admin/vector_manage.html" class="nav-item" data-require="admin">向量明细</a>
+                <a href="/admin/graphrag_manage.html" class="nav-item" data-require="admin">图谱构建</a>
+                <a href="/admin/settings_manage.html" class="nav-item" data-require="admin">系统配置</a>
+                <a href="/admin/exports_manage.html" class="nav-item" data-require="admin">导出报表</a>
+                <a href="/admin/user_manage.html" class="nav-item" data-require="admin">用户权限</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="/volc-kb">返回问答</a> | <a href="#" id="logout">退出</a>
+            </div>
+        </aside>
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>管理仪表盘</h1>
+                <p>智能竞赛客服机器人系统运行概览</p>
+            </header>
+
+            <div class="stats-row">
+                <div class="stat-card purple">
+                    <span class="number" id="statPdfCount">-</span>
+                    <small>知识库文档</small>
+                </div>
+                <div class="stat-card blue">
+                    <span class="number" id="statGraphragStatus">-</span>
+                    <small>知识图谱状态</small>
+                </div>
+                <div class="stat-card green">
+                    <span class="number" id="statQuestionCount">-</span>
+                    <small>累计问答</small>
+                </div>
+            </div>
+
+            <div class="admin-content">
+                <section class="card">
+                    <h2>知识库状态</h2>
+                    <p id="kbStatus">加载中...</p>
+                </section>
+                <section class="card">
+                    <h2>GraphRAG 知识图谱</h2>
+                    <p id="graphragStatus">加载中...</p>
+                </section>
+                <section class="card">
+                    <h2>快捷入口</h2>
+                    <div class="quick-links">
+                        <a href="/admin/pdf_manage.html">文档上传与管线</a>
+                        <a href="/admin/indexes_manage.html">向量与图谱总览</a>
+                        <a href="/admin/events.html">赛事管理</a>
+                        <a href="/admin/vector_manage.html" data-require="admin">向量构建记录</a>
+                        <a href="/admin/graphrag_manage.html" data-require="admin">图谱构建</a>
+                        <a href="/admin/tasks_manage.html">任务控制台</a>
+                        <a href="/admin/logs_manage.html">日志中心</a>
+                        <a href="/admin/question_manage.html">对话历史</a>
+                        <a href="/admin/settings_manage.html" data-require="admin">系统配置</a>
+                        <a href="/admin/exports_manage.html" data-require="admin">导出报表</a>
+                        <a href="/admin/user_manage.html" data-require="admin">用户权限</a>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/logger.js"></script>
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/admin/common.js"></script>
+    <script>
+        window.axios.create({ baseURL: window.API_BASE || '', withCredentials: true, timeout: 30000, headers: getAuthHeaders() })
+            .get('/api/kb/status')
+            .then(function(r) { return r.data; })
+            .then(function(d) {
+                var data = d.data || d;
+                document.getElementById('kbStatus').textContent = JSON.stringify(data, null, 2);
+                if (data.pdf_count != null) {
+                    document.getElementById('statPdfCount').textContent = data.pdf_count;
+                }
+            })
+            .catch(function() { document.getElementById('kbStatus').textContent = '获取失败'; });
+
+        window.axios.create({ baseURL: window.API_BASE || '', withCredentials: true, timeout: 30000, headers: getAuthHeaders() })
+            .get('/api/admin/graphrag/status')
+            .then(function(r) { return r.data; })
+            .then(function(d) {
+                var data = d.data || {};
+                var text = data.available
+                    ? '已就绪 — 实体: ' + (data.entities||0) + ', 关系: ' + (data.relationships||0) + ', 社区: ' + (data.communities||0)
+                    : '索引未构建';
+                if (data.build_running) text += ' (构建中...)';
+                document.getElementById('graphragStatus').textContent = text;
+                document.getElementById('statGraphragStatus').textContent = data.available ? '已就绪' : '未构建';
+            })
+            .catch(function() {
+                document.getElementById('graphragStatus').textContent = '获取失败';
+                document.getElementById('statGraphragStatus').textContent = '-';
+            });
+
+        window.axios.create({ baseURL: window.API_BASE || '', withCredentials: true, timeout: 30000, headers: getAuthHeaders() })
+            .get('/api/admin/questions/list?limit=1&offset=0')
+            .then(function(r) { return r.data; })
+            .then(function(d) {
+                document.getElementById('statQuestionCount').textContent = (d.data && d.data.total) || 0;
+            })
+            .catch(function() {});
+    </script>
+</body>
+</html>

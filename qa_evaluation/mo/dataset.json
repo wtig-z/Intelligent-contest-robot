@@ -1,0 +1,4215 @@
+[
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "参赛作品提交截止时间为2026年7月20日14点",
+      "ground_truth_docs": [
+        "doc_892",
+        "doc_893"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2026年7月20日14点"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "初赛侧重基础操作，复赛侧重对抗性测试，决赛增加方案讲解环节",
+      "ground_truth_docs": [
+        "doc_320"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重基础操作，复赛侧重对抗性测试，决赛增加方案讲解环节"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "比赛场地的尺寸为2米×2米，高度限制30米",
+      "ground_truth_docs": [
+        "doc_193",
+        "doc_194"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为2米×2米，高度限制30米"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "机器人的重量限制为1千克（含电池）",
+      "ground_truth_docs": [
+        "doc_437",
+        "doc_438"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为1千克（含电池）"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "机器人的单次运行时间限制为3分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_104"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为3分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "初赛侧重稳定性测试，复赛侧重多场景适配，决赛增加技术创新点评环节",
+      "ground_truth_docs": [
+        "doc_429",
+        "doc_430"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重稳定性测试，复赛侧重多场景适配，决赛增加技术创新点评环节"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "外观设计占总分的10%，主要考察轻量化和易维护性",
+      "ground_truth_docs": [
+        "doc_952",
+        "doc_953"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的10%，主要考察轻量化和易维护性"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "比赛场地的尺寸为5米×2米，高度限制25米",
+      "ground_truth_docs": [
+        "doc_212"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为5米×2米，高度限制25米"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "机器人的重量限制为1千克（含电池）",
+      "ground_truth_docs": [
+        "doc_13"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为1千克（含电池）"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为20cm×35cm×35cm",
+      "ground_truth_docs": [
+        "doc_994"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为20cm×35cm×35cm"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "初赛侧重稳定性测试，复赛侧重多场景适配，决赛增加技术创新点评环节",
+      "ground_truth_docs": [
+        "doc_785"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重稳定性测试，复赛侧重多场景适配，决赛增加技术创新点评环节"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "禁止使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_535",
+        "doc_536"
+      ],
+      "ground_truth_extracts": [
+        "禁止使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "比赛现场提供当地标准220V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_362",
+        "doc_363"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准220V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为2人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_903"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为2人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "比赛场地的尺寸为5米×4米，高度限制35米",
+      "ground_truth_docs": [
+        "doc_882"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为5米×4米，高度限制35米"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "参赛作品提交截止时间为2026年5月10日12点",
+      "ground_truth_docs": [
+        "doc_4",
+        "doc_5"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2026年5月10日12点"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "机器人的单次运行时间限制为5分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_88"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为5分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "比赛场地的尺寸为2米×5米，高度限制30米",
+      "ground_truth_docs": [
+        "doc_633"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为2米×5米，高度限制30米"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "参赛作品提交截止时间为2024年5月15日18点",
+      "ground_truth_docs": [
+        "doc_274"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2024年5月15日18点"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "评分标准包含创新设计、能耗效率、环境适应性三个核心维度",
+      "ground_truth_docs": [
+        "doc_714"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含创新设计、能耗效率、环境适应性三个核心维度"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "外观设计占总分的15%，主要考察轻量化和模块化设计",
+      "ground_truth_docs": [
+        "doc_485"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的15%，主要考察轻量化和模块化设计"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "机器人的重量限制为3千克（含电池）",
+      "ground_truth_docs": [
+        "doc_793"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为3千克（含电池）"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "评分标准包含创新设计、能耗效率、故障恢复能力三个核心维度",
+      "ground_truth_docs": [
+        "doc_374",
+        "doc_375"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含创新设计、能耗效率、故障恢复能力三个核心维度"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "评分标准包含运行稳定性、能耗效率、成本控制三个核心维度",
+      "ground_truth_docs": [
+        "doc_486",
+        "doc_487"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含运行稳定性、能耗效率、成本控制三个核心维度"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "评分标准包含运行稳定性、能耗效率、故障恢复能力三个核心维度",
+      "ground_truth_docs": [
+        "doc_186"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含运行稳定性、能耗效率、故障恢复能力三个核心维度"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "有条件允许使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_695",
+        "doc_696"
+      ],
+      "ground_truth_extracts": [
+        "有条件允许使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "有条件允许使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_75"
+      ],
+      "ground_truth_extracts": [
+        "有条件允许使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "允许使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_152",
+        "doc_153"
+      ],
+      "ground_truth_extracts": [
+        "允许使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "机器人的重量限制为5千克（含电池）",
+      "ground_truth_docs": [
+        "doc_442"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为5千克（含电池）"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为4人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_507"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为4人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "初赛侧重稳定性测试，复赛侧重复杂任务，决赛增加现场答辩环节",
+      "ground_truth_docs": [
+        "doc_781"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重稳定性测试，复赛侧重复杂任务，决赛增加现场答辩环节"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_999",
+        "doc_1000"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "小学低年级组的机器人可使用红外遥控",
+      "ground_truth_docs": [
+        "doc_569",
+        "doc_570"
+      ],
+      "ground_truth_extracts": [
+        "小学低年级组的机器人可使用红外遥控"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "比赛场地的尺寸为4米×5米，高度限制30米",
+      "ground_truth_docs": [
+        "doc_680",
+        "doc_681"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为4米×5米，高度限制30米"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "小学低年级组的机器人可使用蓝牙遥控",
+      "ground_truth_docs": [
+        "doc_536",
+        "doc_537"
+      ],
+      "ground_truth_extracts": [
+        "小学低年级组的机器人可使用蓝牙遥控"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_139"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "比赛场地的尺寸为5米×2米，高度限制20米",
+      "ground_truth_docs": [
+        "doc_48",
+        "doc_49"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为5米×2米，高度限制20米"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "评分标准包含创新设计、操作便捷性、成本控制三个核心维度",
+      "ground_truth_docs": [
+        "doc_141"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含创新设计、操作便捷性、成本控制三个核心维度"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "仅允许使用有线控制方式，禁止使用声波方式",
+      "ground_truth_docs": [
+        "doc_781",
+        "doc_782"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用有线控制方式，禁止使用声波方式"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为25cm×25cm×20cm",
+      "ground_truth_docs": [
+        "doc_981",
+        "doc_982"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为25cm×25cm×20cm"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_414"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "机器人的电池电压不得超过6伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_686"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过6伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "机器人的电池电压不得超过6伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_761",
+        "doc_762"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过6伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "初赛侧重基础操作，复赛侧重复杂任务，决赛增加方案讲解环节",
+      "ground_truth_docs": [
+        "doc_901",
+        "doc_902"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重基础操作，复赛侧重复杂任务，决赛增加方案讲解环节"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "评分标准包含功能完成度、能耗效率、成本控制三个核心维度",
+      "ground_truth_docs": [
+        "doc_818"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含功能完成度、能耗效率、成本控制三个核心维度"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "比赛场地的尺寸为2米×5米，高度限制20米",
+      "ground_truth_docs": [
+        "doc_130",
+        "doc_131"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为2米×5米，高度限制20米"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "允许使用红外传感器，禁止使用压力传感器",
+      "ground_truth_docs": [
+        "doc_251",
+        "doc_252"
+      ],
+      "ground_truth_extracts": [
+        "允许使用红外传感器，禁止使用压力传感器"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "比赛现场提供当地标准USB-C直流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_372"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准USB-C直流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "参赛作品提交截止时间为2024年4月20日14点",
+      "ground_truth_docs": [
+        "doc_809",
+        "doc_810"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2024年4月20日14点"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "机器人的重量限制为4千克（含电池）",
+      "ground_truth_docs": [
+        "doc_667"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为4千克（含电池）"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "初赛侧重稳定性测试，复赛侧重复杂任务，决赛增加现场答辩环节",
+      "ground_truth_docs": [
+        "doc_634"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重稳定性测试，复赛侧重复杂任务，决赛增加现场答辩环节"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "机器人的重量限制为3千克（含电池）",
+      "ground_truth_docs": [
+        "doc_306"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为3千克（含电池）"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "评分标准包含运行稳定性、响应速度、成本控制三个核心维度",
+      "ground_truth_docs": [
+        "doc_124"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含运行稳定性、响应速度、成本控制三个核心维度"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "机器人的电池电压不得超过12伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_795"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过12伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "有条件允许使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_636",
+        "doc_637"
+      ],
+      "ground_truth_extracts": [
+        "有条件允许使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_900"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为5人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_449",
+        "doc_450"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为5人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "比赛场地的尺寸为3米×2米，高度限制30米",
+      "ground_truth_docs": [
+        "doc_94",
+        "doc_95"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为3米×2米，高度限制30米"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "有条件允许使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_970"
+      ],
+      "ground_truth_extracts": [
+        "有条件允许使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "评分标准包含功能完成度、能耗效率、成本控制三个核心维度",
+      "ground_truth_docs": [
+        "doc_184"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含功能完成度、能耗效率、成本控制三个核心维度"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_250",
+        "doc_251"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "机器人的单次运行时间限制为10分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_60",
+        "doc_61"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为10分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "外观设计占总分的5%，主要考察轻量化和环保材料",
+      "ground_truth_docs": [
+        "doc_376",
+        "doc_377"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的5%，主要考察轻量化和环保材料"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "仅允许使用蓝牙控制方式，禁止使用远程网络方式",
+      "ground_truth_docs": [
+        "doc_28",
+        "doc_29"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用蓝牙控制方式，禁止使用远程网络方式"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "机器人的单次运行时间限制为3分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_405",
+        "doc_406"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为3分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "比赛场地的尺寸为2米×2米，高度限制25米",
+      "ground_truth_docs": [
+        "doc_207",
+        "doc_208"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为2米×2米，高度限制25米"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "机器人的电池电压不得超过6伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_989",
+        "doc_990"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过6伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "比赛场地的尺寸为3米×4米，高度限制30米",
+      "ground_truth_docs": [
+        "doc_203"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为3米×4米，高度限制30米"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "参赛作品提交截止时间为2024年4月10日16点",
+      "ground_truth_docs": [
+        "doc_115",
+        "doc_116"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2024年4月10日16点"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为20cm×20cm×35cm",
+      "ground_truth_docs": [
+        "doc_653"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为20cm×20cm×35cm"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "机器人的单次运行时间限制为3分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_194"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为3分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "参赛作品提交截止时间为2026年6月10日14点",
+      "ground_truth_docs": [
+        "doc_455"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2026年6月10日14点"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "机器人的单次运行时间限制为5分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_893"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为5分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "机器人的电池电压不得超过12伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_144",
+        "doc_145"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过12伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为25cm×25cm×35cm",
+      "ground_truth_docs": [
+        "doc_287",
+        "doc_288"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为25cm×25cm×35cm"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "机器人的电池电压不得超过15伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_409",
+        "doc_410"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过15伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "高中组的机器人可使用无线遥控",
+      "ground_truth_docs": [
+        "doc_464",
+        "doc_465"
+      ],
+      "ground_truth_extracts": [
+        "高中组的机器人可使用无线遥控"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "机器人的重量限制为1千克（含电池）",
+      "ground_truth_docs": [
+        "doc_401"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为1千克（含电池）"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "外观设计占总分的20%，主要考察美观性和模块化设计",
+      "ground_truth_docs": [
+        "doc_54"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的20%，主要考察美观性和模块化设计"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "比赛场地的尺寸为2米×3米，高度限制25米",
+      "ground_truth_docs": [
+        "doc_628",
+        "doc_629"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为2米×3米，高度限制25米"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "禁止使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_647",
+        "doc_648"
+      ],
+      "ground_truth_extracts": [
+        "禁止使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "小学高年级组的机器人可使用蓝牙遥控",
+      "ground_truth_docs": [
+        "doc_166"
+      ],
+      "ground_truth_extracts": [
+        "小学高年级组的机器人可使用蓝牙遥控"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "外观设计占总分的20%，主要考察轻量化和易维护性",
+      "ground_truth_docs": [
+        "doc_30",
+        "doc_31"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的20%，主要考察轻量化和易维护性"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "评分标准包含创新设计、操作便捷性、故障恢复能力三个核心维度",
+      "ground_truth_docs": [
+        "doc_118"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含创新设计、操作便捷性、故障恢复能力三个核心维度"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "初赛侧重功能验证，复赛侧重复杂任务，决赛增加现场答辩环节",
+      "ground_truth_docs": [
+        "doc_93",
+        "doc_94"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重功能验证，复赛侧重复杂任务，决赛增加现场答辩环节"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "参赛作品提交截止时间为2026年5月20日18点",
+      "ground_truth_docs": [
+        "doc_953",
+        "doc_954"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2026年5月20日18点"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "参赛作品提交截止时间为2024年7月10日14点",
+      "ground_truth_docs": [
+        "doc_995",
+        "doc_996"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2024年7月10日14点"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "比赛场地的尺寸为4米×3米，高度限制25米",
+      "ground_truth_docs": [
+        "doc_35"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为4米×3米，高度限制25米"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "有条件允许使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_701"
+      ],
+      "ground_truth_extracts": [
+        "有条件允许使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "比赛场地的尺寸为5米×4米，高度限制30米",
+      "ground_truth_docs": [
+        "doc_305"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为5米×4米，高度限制30米"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "允许使用红外传感器，禁止使用激光传感器",
+      "ground_truth_docs": [
+        "doc_892"
+      ],
+      "ground_truth_extracts": [
+        "允许使用红外传感器，禁止使用激光传感器"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为5人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_229",
+        "doc_230"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为5人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "禁止使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_794"
+      ],
+      "ground_truth_extracts": [
+        "禁止使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "允许使用视觉传感器，禁止使用激光传感器",
+      "ground_truth_docs": [
+        "doc_342",
+        "doc_343"
+      ],
+      "ground_truth_extracts": [
+        "允许使用视觉传感器，禁止使用激光传感器"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "机器人的单次运行时间限制为3分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_401",
+        "doc_402"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为3分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为35cm×30cm×35cm",
+      "ground_truth_docs": [
+        "doc_710"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为35cm×30cm×35cm"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "允许使用视觉传感器，禁止使用微波传感器",
+      "ground_truth_docs": [
+        "doc_121"
+      ],
+      "ground_truth_extracts": [
+        "允许使用视觉传感器，禁止使用微波传感器"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "仅允许使用蓝牙控制方式，禁止使用远程网络方式",
+      "ground_truth_docs": [
+        "doc_515"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用蓝牙控制方式，禁止使用远程网络方式"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为20cm×35cm×25cm",
+      "ground_truth_docs": [
+        "doc_822",
+        "doc_823"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为20cm×35cm×25cm"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为35cm×20cm×25cm",
+      "ground_truth_docs": [
+        "doc_823",
+        "doc_824"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为35cm×20cm×25cm"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "参赛作品提交截止时间为2024年5月20日16点",
+      "ground_truth_docs": [
+        "doc_429"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2024年5月20日16点"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "参赛作品提交截止时间为2025年6月20日16点",
+      "ground_truth_docs": [
+        "doc_152"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2025年6月20日16点"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "机器人的电池电压不得超过15伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_563"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过15伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为20cm×30cm×20cm",
+      "ground_truth_docs": [
+        "doc_128",
+        "doc_129"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为20cm×30cm×20cm"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为30cm×20cm×20cm",
+      "ground_truth_docs": [
+        "doc_25"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为30cm×20cm×20cm"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "仅允许使用有线控制方式，禁止使用远程网络方式",
+      "ground_truth_docs": [
+        "doc_335",
+        "doc_336"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用有线控制方式，禁止使用远程网络方式"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为3人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_53"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为3人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "仅允许使用WiFi控制方式，禁止使用红外方式",
+      "ground_truth_docs": [
+        "doc_435",
+        "doc_436"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用WiFi控制方式，禁止使用红外方式"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_427"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "评分标准包含创新设计、响应速度、故障恢复能力三个核心维度",
+      "ground_truth_docs": [
+        "doc_142",
+        "doc_143"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含创新设计、响应速度、故障恢复能力三个核心维度"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "初赛侧重稳定性测试，复赛侧重对抗性测试，决赛增加现场答辩环节",
+      "ground_truth_docs": [
+        "doc_285",
+        "doc_286"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重稳定性测试，复赛侧重对抗性测试，决赛增加现场答辩环节"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "机器人的单次运行时间限制为5分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_217"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为5分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为20cm×20cm×30cm",
+      "ground_truth_docs": [
+        "doc_352",
+        "doc_353"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为20cm×20cm×30cm"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_725",
+        "doc_726"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "允许使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_215",
+        "doc_216"
+      ],
+      "ground_truth_extracts": [
+        "允许使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "机器人的重量限制为2千克（含电池）",
+      "ground_truth_docs": [
+        "doc_879",
+        "doc_880"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为2千克（含电池）"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "禁止使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_877",
+        "doc_878"
+      ],
+      "ground_truth_extracts": [
+        "禁止使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "外观设计占总分的5%，主要考察实用性和模块化设计",
+      "ground_truth_docs": [
+        "doc_849",
+        "doc_850"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的5%，主要考察实用性和模块化设计"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "评分标准包含创新设计、操作便捷性、成本控制三个核心维度",
+      "ground_truth_docs": [
+        "doc_733"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含创新设计、操作便捷性、成本控制三个核心维度"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "比赛场地的尺寸为4米×2米，高度限制25米",
+      "ground_truth_docs": [
+        "doc_546"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为4米×2米，高度限制25米"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为20cm×30cm×25cm",
+      "ground_truth_docs": [
+        "doc_18"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为20cm×30cm×25cm"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "仅允许使用有线控制方式，禁止使用声波方式",
+      "ground_truth_docs": [
+        "doc_380",
+        "doc_381"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用有线控制方式，禁止使用声波方式"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为2人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_977"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为2人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "机器人的电池电压不得超过15伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_986",
+        "doc_987"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过15伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "禁止使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_106",
+        "doc_107"
+      ],
+      "ground_truth_extracts": [
+        "禁止使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_713"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "比赛场地的尺寸为3米×3米，高度限制25米",
+      "ground_truth_docs": [
+        "doc_949"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为3米×3米，高度限制25米"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "机器人的单次运行时间限制为3分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_893",
+        "doc_894"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为3分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_833",
+        "doc_834"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_149"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "评分标准包含创新设计、响应速度、环境适应性三个核心维度",
+      "ground_truth_docs": [
+        "doc_968",
+        "doc_969"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含创新设计、响应速度、环境适应性三个核心维度"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "比赛现场提供当地标准220V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_698"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准220V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "机器人的重量限制为5千克（含电池）",
+      "ground_truth_docs": [
+        "doc_702"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为5千克（含电池）"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "禁止使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_759"
+      ],
+      "ground_truth_extracts": [
+        "禁止使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为3人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_648"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为3人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "比赛场地的尺寸为3米×4米，高度限制30米",
+      "ground_truth_docs": [
+        "doc_211"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为3米×4米，高度限制30米"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "机器人的单次运行时间限制为10分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_642",
+        "doc_643"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为10分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "机器人的单次运行时间限制为10分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_894",
+        "doc_895"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为10分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "仅允许使用WiFi控制方式，禁止使用红外方式",
+      "ground_truth_docs": [
+        "doc_542",
+        "doc_543"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用WiFi控制方式，禁止使用红外方式"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为35cm×35cm×30cm",
+      "ground_truth_docs": [
+        "doc_625"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为35cm×35cm×30cm"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "仅允许使用WiFi控制方式，禁止使用红外方式",
+      "ground_truth_docs": [
+        "doc_60"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用WiFi控制方式，禁止使用红外方式"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "机器人的重量限制为4千克（含电池）",
+      "ground_truth_docs": [
+        "doc_953",
+        "doc_954"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为4千克（含电池）"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "允许使用触觉传感器，禁止使用微波传感器",
+      "ground_truth_docs": [
+        "doc_917",
+        "doc_918"
+      ],
+      "ground_truth_extracts": [
+        "允许使用触觉传感器，禁止使用微波传感器"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "初赛侧重稳定性测试，复赛侧重复杂任务，决赛增加现场答辩环节",
+      "ground_truth_docs": [
+        "doc_917"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重稳定性测试，复赛侧重复杂任务，决赛增加现场答辩环节"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "允许使用视觉传感器，禁止使用微波传感器",
+      "ground_truth_docs": [
+        "doc_844",
+        "doc_845"
+      ],
+      "ground_truth_extracts": [
+        "允许使用视觉传感器，禁止使用微波传感器"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_110",
+        "doc_111"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为25cm×35cm×35cm",
+      "ground_truth_docs": [
+        "doc_418"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为25cm×35cm×35cm"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为5人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_998",
+        "doc_999"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为5人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "初赛侧重功能验证，复赛侧重复杂任务，决赛增加现场答辩环节",
+      "ground_truth_docs": [
+        "doc_718"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重功能验证，复赛侧重复杂任务，决赛增加现场答辩环节"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "初赛侧重功能验证，复赛侧重复杂任务，决赛增加方案讲解环节",
+      "ground_truth_docs": [
+        "doc_194",
+        "doc_195"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重功能验证，复赛侧重复杂任务，决赛增加方案讲解环节"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "比赛场地的尺寸为5米×4米，高度限制20米",
+      "ground_truth_docs": [
+        "doc_346"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为5米×4米，高度限制20米"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "比赛场地的尺寸为5米×5米，高度限制30米",
+      "ground_truth_docs": [
+        "doc_335"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为5米×5米，高度限制30米"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "评分标准包含运行稳定性、操作便捷性、成本控制三个核心维度",
+      "ground_truth_docs": [
+        "doc_165"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含运行稳定性、操作便捷性、成本控制三个核心维度"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "机器人的重量限制为5千克（含电池）",
+      "ground_truth_docs": [
+        "doc_413",
+        "doc_414"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为5千克（含电池）"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "参赛作品提交截止时间为2024年7月10日12点",
+      "ground_truth_docs": [
+        "doc_788"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2024年7月10日12点"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "评分标准包含运行稳定性、响应速度、成本控制三个核心维度",
+      "ground_truth_docs": [
+        "doc_863",
+        "doc_864"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含运行稳定性、响应速度、成本控制三个核心维度"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "初中组的机器人可使用无线遥控",
+      "ground_truth_docs": [
+        "doc_327"
+      ],
+      "ground_truth_extracts": [
+        "初中组的机器人可使用无线遥控"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "机器人的重量限制为1千克（含电池）",
+      "ground_truth_docs": [
+        "doc_505"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为1千克（含电池）"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "评分标准包含运行稳定性、能耗效率、成本控制三个核心维度",
+      "ground_truth_docs": [
+        "doc_940"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含运行稳定性、能耗效率、成本控制三个核心维度"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_239"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "允许使用视觉传感器，禁止使用微波传感器",
+      "ground_truth_docs": [
+        "doc_87",
+        "doc_88"
+      ],
+      "ground_truth_extracts": [
+        "允许使用视觉传感器，禁止使用微波传感器"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "机器人的重量限制为5千克（含电池）",
+      "ground_truth_docs": [
+        "doc_175",
+        "doc_176"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为5千克（含电池）"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "小学低年级组的机器人可使用红外遥控",
+      "ground_truth_docs": [
+        "doc_845",
+        "doc_846"
+      ],
+      "ground_truth_extracts": [
+        "小学低年级组的机器人可使用红外遥控"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "机器人的电池电压不得超过9伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_578",
+        "doc_579"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过9伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "机器人的重量限制为4千克（含电池）",
+      "ground_truth_docs": [
+        "doc_329",
+        "doc_330"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为4千克（含电池）"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "有条件允许使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_838",
+        "doc_839"
+      ],
+      "ground_truth_extracts": [
+        "有条件允许使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为2人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_186"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为2人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "初中组的机器人可使用有线遥控",
+      "ground_truth_docs": [
+        "doc_488"
+      ],
+      "ground_truth_extracts": [
+        "初中组的机器人可使用有线遥控"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "高中组的机器人可使用有线遥控",
+      "ground_truth_docs": [
+        "doc_854",
+        "doc_855"
+      ],
+      "ground_truth_extracts": [
+        "高中组的机器人可使用有线遥控"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "参赛作品提交截止时间为2024年6月20日14点",
+      "ground_truth_docs": [
+        "doc_490"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2024年6月20日14点"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_418"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "机器人的电池电压不得超过12伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_383"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过12伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为25cm×30cm×20cm",
+      "ground_truth_docs": [
+        "doc_729",
+        "doc_730"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为25cm×30cm×20cm"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "参赛作品提交截止时间为2026年4月20日12点",
+      "ground_truth_docs": [
+        "doc_367",
+        "doc_368"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2026年4月20日12点"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为4人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_500"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为4人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "比赛场地的尺寸为2米×4米，高度限制35米",
+      "ground_truth_docs": [
+        "doc_550"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为2米×4米，高度限制35米"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为4人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_488"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为4人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "禁止使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_214",
+        "doc_215"
+      ],
+      "ground_truth_extracts": [
+        "禁止使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为35cm×30cm×30cm",
+      "ground_truth_docs": [
+        "doc_64",
+        "doc_65"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为35cm×30cm×30cm"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "小学低年级组的机器人可使用有线遥控",
+      "ground_truth_docs": [
+        "doc_345",
+        "doc_346"
+      ],
+      "ground_truth_extracts": [
+        "小学低年级组的机器人可使用有线遥控"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为30cm×35cm×20cm",
+      "ground_truth_docs": [
+        "doc_538",
+        "doc_539"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为30cm×35cm×20cm"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为3人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_685",
+        "doc_686"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为3人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "比赛场地的尺寸为3米×2米，高度限制30米",
+      "ground_truth_docs": [
+        "doc_433"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为3米×2米，高度限制30米"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "外观设计占总分的15%，主要考察实用性和环保材料",
+      "ground_truth_docs": [
+        "doc_893"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的15%，主要考察实用性和环保材料"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "初赛侧重功能验证，复赛侧重复杂任务，决赛增加现场答辩环节",
+      "ground_truth_docs": [
+        "doc_543"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重功能验证，复赛侧重复杂任务，决赛增加现场答辩环节"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "评分标准包含功能完成度、操作便捷性、环境适应性三个核心维度",
+      "ground_truth_docs": [
+        "doc_834"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含功能完成度、操作便捷性、环境适应性三个核心维度"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "机器人的电池电压不得超过15伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_685"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过15伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "评分标准包含运行稳定性、能耗效率、成本控制三个核心维度",
+      "ground_truth_docs": [
+        "doc_514",
+        "doc_515"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含运行稳定性、能耗效率、成本控制三个核心维度"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "允许使用红外传感器，禁止使用微波传感器",
+      "ground_truth_docs": [
+        "doc_113"
+      ],
+      "ground_truth_extracts": [
+        "允许使用红外传感器，禁止使用微波传感器"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "外观设计占总分的10%，主要考察实用性和模块化设计",
+      "ground_truth_docs": [
+        "doc_352",
+        "doc_353"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的10%，主要考察实用性和模块化设计"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为25cm×35cm×20cm",
+      "ground_truth_docs": [
+        "doc_878",
+        "doc_879"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为25cm×35cm×20cm"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "评分标准包含创新设计、操作便捷性、成本控制三个核心维度",
+      "ground_truth_docs": [
+        "doc_517",
+        "doc_518"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含创新设计、操作便捷性、成本控制三个核心维度"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "参赛作品提交截止时间为2024年4月25日16点",
+      "ground_truth_docs": [
+        "doc_974"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2024年4月25日16点"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "外观设计占总分的15%，主要考察轻量化和环保材料",
+      "ground_truth_docs": [
+        "doc_353",
+        "doc_354"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的15%，主要考察轻量化和环保材料"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "允许使用视觉传感器，禁止使用压力传感器",
+      "ground_truth_docs": [
+        "doc_682"
+      ],
+      "ground_truth_extracts": [
+        "允许使用视觉传感器，禁止使用压力传感器"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "评分标准包含运行稳定性、操作便捷性、故障恢复能力三个核心维度",
+      "ground_truth_docs": [
+        "doc_793"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含运行稳定性、操作便捷性、故障恢复能力三个核心维度"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "仅允许使用WiFi控制方式，禁止使用红外方式",
+      "ground_truth_docs": [
+        "doc_96"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用WiFi控制方式，禁止使用红外方式"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "评分标准包含功能完成度、能耗效率、环境适应性三个核心维度",
+      "ground_truth_docs": [
+        "doc_53"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含功能完成度、能耗效率、环境适应性三个核心维度"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "比赛场地的尺寸为5米×4米，高度限制20米",
+      "ground_truth_docs": [
+        "doc_315",
+        "doc_316"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为5米×4米，高度限制20米"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "允许使用触觉传感器，禁止使用激光传感器",
+      "ground_truth_docs": [
+        "doc_993"
+      ],
+      "ground_truth_extracts": [
+        "允许使用触觉传感器，禁止使用激光传感器"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为3人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_78",
+        "doc_79"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为3人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "机器人的电池电压不得超过9伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_628",
+        "doc_629"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过9伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "比赛场地的尺寸为2米×3米，高度限制20米",
+      "ground_truth_docs": [
+        "doc_288"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为2米×3米，高度限制20米"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "仅允许使用蓝牙控制方式，禁止使用声波方式",
+      "ground_truth_docs": [
+        "doc_14"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用蓝牙控制方式，禁止使用声波方式"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "仅允许使用蓝牙控制方式，禁止使用声波方式",
+      "ground_truth_docs": [
+        "doc_815",
+        "doc_816"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用蓝牙控制方式，禁止使用声波方式"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "机器人的单次运行时间限制为10分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_351",
+        "doc_352"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为10分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为30cm×20cm×35cm",
+      "ground_truth_docs": [
+        "doc_778"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为30cm×20cm×35cm"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "仅允许使用蓝牙控制方式，禁止使用红外方式",
+      "ground_truth_docs": [
+        "doc_783",
+        "doc_784"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用蓝牙控制方式，禁止使用红外方式"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "初赛侧重稳定性测试，复赛侧重对抗性测试，决赛增加方案讲解环节",
+      "ground_truth_docs": [
+        "doc_506",
+        "doc_507"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重稳定性测试，复赛侧重对抗性测试，决赛增加方案讲解环节"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为35cm×20cm×30cm",
+      "ground_truth_docs": [
+        "doc_218",
+        "doc_219"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为35cm×20cm×30cm"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "比赛场地的尺寸为3米×2米，高度限制30米",
+      "ground_truth_docs": [
+        "doc_402"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为3米×2米，高度限制30米"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "禁止使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_423",
+        "doc_424"
+      ],
+      "ground_truth_extracts": [
+        "禁止使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "机器人的电池电压不得超过6伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_741",
+        "doc_742"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过6伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "评分标准包含功能完成度、能耗效率、成本控制三个核心维度",
+      "ground_truth_docs": [
+        "doc_903"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含功能完成度、能耗效率、成本控制三个核心维度"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "禁止使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_208",
+        "doc_209"
+      ],
+      "ground_truth_extracts": [
+        "禁止使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "初赛侧重功能验证，复赛侧重对抗性测试，决赛增加方案讲解环节",
+      "ground_truth_docs": [
+        "doc_114"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重功能验证，复赛侧重对抗性测试，决赛增加方案讲解环节"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "参赛作品提交截止时间为2025年7月15日16点",
+      "ground_truth_docs": [
+        "doc_437"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2025年7月15日16点"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "评分标准包含功能完成度、响应速度、环境适应性三个核心维度",
+      "ground_truth_docs": [
+        "doc_990",
+        "doc_991"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含功能完成度、响应速度、环境适应性三个核心维度"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "比赛场地的尺寸为5米×3米，高度限制25米",
+      "ground_truth_docs": [
+        "doc_877"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为5米×3米，高度限制25米"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "小学高年级组的机器人可使用蓝牙遥控",
+      "ground_truth_docs": [
+        "doc_6",
+        "doc_7"
+      ],
+      "ground_truth_extracts": [
+        "小学高年级组的机器人可使用蓝牙遥控"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "评分标准包含创新设计、能耗效率、环境适应性三个核心维度",
+      "ground_truth_docs": [
+        "doc_656",
+        "doc_657"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含创新设计、能耗效率、环境适应性三个核心维度"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "初赛侧重功能验证，复赛侧重对抗性测试，决赛增加技术创新点评环节",
+      "ground_truth_docs": [
+        "doc_556"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重功能验证，复赛侧重对抗性测试，决赛增加技术创新点评环节"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "参赛作品提交截止时间为2024年4月25日12点",
+      "ground_truth_docs": [
+        "doc_87"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2024年4月25日12点"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为4人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_792",
+        "doc_793"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为4人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "比赛场地的尺寸为2米×2米，高度限制25米",
+      "ground_truth_docs": [
+        "doc_582",
+        "doc_583"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为2米×2米，高度限制25米"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_473",
+        "doc_474"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "参赛作品提交截止时间为2025年4月15日18点",
+      "ground_truth_docs": [
+        "doc_589"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2025年4月15日18点"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "机器人的电池电压不得超过15伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_998",
+        "doc_999"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过15伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "仅允许使用蓝牙控制方式，禁止使用红外方式",
+      "ground_truth_docs": [
+        "doc_121"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用蓝牙控制方式，禁止使用红外方式"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为35cm×35cm×30cm",
+      "ground_truth_docs": [
+        "doc_916",
+        "doc_917"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为35cm×35cm×30cm"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "比赛场地的尺寸为2米×2米，高度限制35米",
+      "ground_truth_docs": [
+        "doc_725",
+        "doc_726"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为2米×2米，高度限制35米"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为5人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_53",
+        "doc_54"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为5人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "初赛侧重稳定性测试，复赛侧重对抗性测试，决赛增加技术创新点评环节",
+      "ground_truth_docs": [
+        "doc_687"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重稳定性测试，复赛侧重对抗性测试，决赛增加技术创新点评环节"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "初赛侧重功能验证，复赛侧重多场景适配，决赛增加技术创新点评环节",
+      "ground_truth_docs": [
+        "doc_867",
+        "doc_868"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重功能验证，复赛侧重多场景适配，决赛增加技术创新点评环节"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "外观设计占总分的5%，主要考察实用性和模块化设计",
+      "ground_truth_docs": [
+        "doc_244",
+        "doc_245"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的5%，主要考察实用性和模块化设计"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "参赛作品提交截止时间为2026年6月25日14点",
+      "ground_truth_docs": [
+        "doc_162",
+        "doc_163"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2026年6月25日14点"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "机器人的重量限制为4千克（含电池）",
+      "ground_truth_docs": [
+        "doc_359"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为4千克（含电池）"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "初赛侧重功能验证，复赛侧重复杂任务，决赛增加技术创新点评环节",
+      "ground_truth_docs": [
+        "doc_487",
+        "doc_488"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重功能验证，复赛侧重复杂任务，决赛增加技术创新点评环节"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为20cm×25cm×30cm",
+      "ground_truth_docs": [
+        "doc_933"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为20cm×25cm×30cm"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "比赛场地的尺寸为5米×5米，高度限制30米",
+      "ground_truth_docs": [
+        "doc_894"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为5米×5米，高度限制30米"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "评分标准包含创新设计、响应速度、成本控制三个核心维度",
+      "ground_truth_docs": [
+        "doc_560",
+        "doc_561"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含创新设计、响应速度、成本控制三个核心维度"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "初赛侧重基础操作，复赛侧重复杂任务，决赛增加方案讲解环节",
+      "ground_truth_docs": [
+        "doc_275",
+        "doc_276"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重基础操作，复赛侧重复杂任务，决赛增加方案讲解环节"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "禁止使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_593",
+        "doc_594"
+      ],
+      "ground_truth_extracts": [
+        "禁止使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "机器人的单次运行时间限制为8分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_853"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为8分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "允许使用超声波传感器，禁止使用压力传感器",
+      "ground_truth_docs": [
+        "doc_532",
+        "doc_533"
+      ],
+      "ground_truth_extracts": [
+        "允许使用超声波传感器，禁止使用压力传感器"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "参赛作品提交截止时间为2025年4月20日18点",
+      "ground_truth_docs": [
+        "doc_554",
+        "doc_555"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2025年4月20日18点"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "比赛场地的尺寸为5米×2米，高度限制30米",
+      "ground_truth_docs": [
+        "doc_486"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为5米×2米，高度限制30米"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "允许使用红外传感器，禁止使用压力传感器",
+      "ground_truth_docs": [
+        "doc_96"
+      ],
+      "ground_truth_extracts": [
+        "允许使用红外传感器，禁止使用压力传感器"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "机器人的单次运行时间限制为3分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_717",
+        "doc_718"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为3分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "机器人的重量限制为1千克（含电池）",
+      "ground_truth_docs": [
+        "doc_587",
+        "doc_588"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为1千克（含电池）"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "比赛现场提供当地标准USB-C直流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_602",
+        "doc_603"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准USB-C直流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "机器人的重量限制为2千克（含电池）",
+      "ground_truth_docs": [
+        "doc_453",
+        "doc_454"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为2千克（含电池）"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "允许使用红外传感器，禁止使用激光传感器",
+      "ground_truth_docs": [
+        "doc_638"
+      ],
+      "ground_truth_extracts": [
+        "允许使用红外传感器，禁止使用激光传感器"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "比赛现场提供当地标准USB-C直流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_965"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准USB-C直流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "允许使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_129"
+      ],
+      "ground_truth_extracts": [
+        "允许使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "初赛侧重稳定性测试，复赛侧重对抗性测试，决赛增加现场答辩环节",
+      "ground_truth_docs": [
+        "doc_404",
+        "doc_405"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重稳定性测试，复赛侧重对抗性测试，决赛增加现场答辩环节"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "参赛作品提交截止时间为2024年5月15日16点",
+      "ground_truth_docs": [
+        "doc_708",
+        "doc_709"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2024年5月15日16点"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "机器人的电池电压不得超过15伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_64",
+        "doc_65"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过15伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为30cm×20cm×30cm",
+      "ground_truth_docs": [
+        "doc_160",
+        "doc_161"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为30cm×20cm×30cm"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "允许使用红外传感器，禁止使用激光传感器",
+      "ground_truth_docs": [
+        "doc_163",
+        "doc_164"
+      ],
+      "ground_truth_extracts": [
+        "允许使用红外传感器，禁止使用激光传感器"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "参赛作品提交截止时间为2026年6月25日14点",
+      "ground_truth_docs": [
+        "doc_158",
+        "doc_159"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2026年6月25日14点"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "机器人的重量限制为1千克（含电池）",
+      "ground_truth_docs": [
+        "doc_169"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为1千克（含电池）"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "外观设计占总分的10%，主要考察实用性和模块化设计",
+      "ground_truth_docs": [
+        "doc_115",
+        "doc_116"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的10%，主要考察实用性和模块化设计"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_128"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "参赛作品提交截止时间为2025年4月15日14点",
+      "ground_truth_docs": [
+        "doc_311",
+        "doc_312"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2025年4月15日14点"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "机器人的单次运行时间限制为5分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_374",
+        "doc_375"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为5分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "允许使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_266"
+      ],
+      "ground_truth_extracts": [
+        "允许使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "初赛侧重功能验证，复赛侧重复杂任务，决赛增加技术创新点评环节",
+      "ground_truth_docs": [
+        "doc_119"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重功能验证，复赛侧重复杂任务，决赛增加技术创新点评环节"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为20cm×35cm×35cm",
+      "ground_truth_docs": [
+        "doc_228",
+        "doc_229"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为20cm×35cm×35cm"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "机器人的重量限制为2千克（含电池）",
+      "ground_truth_docs": [
+        "doc_449",
+        "doc_450"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为2千克（含电池）"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "参赛作品提交截止时间为2024年5月20日16点",
+      "ground_truth_docs": [
+        "doc_269",
+        "doc_270"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2024年5月20日16点"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "小学低年级组的机器人可使用红外遥控",
+      "ground_truth_docs": [
+        "doc_66"
+      ],
+      "ground_truth_extracts": [
+        "小学低年级组的机器人可使用红外遥控"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "参赛作品提交截止时间为2026年7月15日16点",
+      "ground_truth_docs": [
+        "doc_380",
+        "doc_381"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2026年7月15日16点"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "仅允许使用蓝牙控制方式，禁止使用红外方式",
+      "ground_truth_docs": [
+        "doc_193"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用蓝牙控制方式，禁止使用红外方式"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为4人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_537"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为4人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "机器人的电池电压不得超过9伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_697",
+        "doc_698"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过9伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "机器人的单次运行时间限制为8分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_293",
+        "doc_294"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为8分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "比赛场地的尺寸为4米×2米，高度限制30米",
+      "ground_truth_docs": [
+        "doc_433",
+        "doc_434"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为4米×2米，高度限制30米"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "初赛侧重稳定性测试，复赛侧重复杂任务，决赛增加现场答辩环节",
+      "ground_truth_docs": [
+        "doc_400"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重稳定性测试，复赛侧重复杂任务，决赛增加现场答辩环节"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "外观设计占总分的5%，主要考察实用性和模块化设计",
+      "ground_truth_docs": [
+        "doc_76"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的5%，主要考察实用性和模块化设计"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "比赛现场提供当地标准220V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_625"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准220V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "比赛场地的尺寸为3米×3米，高度限制35米",
+      "ground_truth_docs": [
+        "doc_551",
+        "doc_552"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为3米×3米，高度限制35米"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为25cm×20cm×20cm",
+      "ground_truth_docs": [
+        "doc_674"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为25cm×20cm×20cm"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "初赛侧重基础操作，复赛侧重多场景适配，决赛增加方案讲解环节",
+      "ground_truth_docs": [
+        "doc_113",
+        "doc_114"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重基础操作，复赛侧重多场景适配，决赛增加方案讲解环节"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "外观设计占总分的10%，主要考察轻量化和易维护性",
+      "ground_truth_docs": [
+        "doc_484",
+        "doc_485"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的10%，主要考察轻量化和易维护性"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为2人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_453",
+        "doc_454"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为2人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为35cm×20cm×25cm",
+      "ground_truth_docs": [
+        "doc_758"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为35cm×20cm×25cm"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "机器人的重量限制为3千克（含电池）",
+      "ground_truth_docs": [
+        "doc_574"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为3千克（含电池）"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为20cm×30cm×35cm",
+      "ground_truth_docs": [
+        "doc_520"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为20cm×30cm×35cm"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为35cm×20cm×20cm",
+      "ground_truth_docs": [
+        "doc_253",
+        "doc_254"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为35cm×20cm×20cm"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "高中组的机器人可使用蓝牙遥控",
+      "ground_truth_docs": [
+        "doc_15",
+        "doc_16"
+      ],
+      "ground_truth_extracts": [
+        "高中组的机器人可使用蓝牙遥控"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "初赛侧重基础操作，复赛侧重复杂任务，决赛增加技术创新点评环节",
+      "ground_truth_docs": [
+        "doc_589"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重基础操作，复赛侧重复杂任务，决赛增加技术创新点评环节"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为5人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_39",
+        "doc_40"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为5人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "初赛侧重功能验证，复赛侧重对抗性测试，决赛增加方案讲解环节",
+      "ground_truth_docs": [
+        "doc_354"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重功能验证，复赛侧重对抗性测试，决赛增加方案讲解环节"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "允许使用视觉传感器，禁止使用微波传感器",
+      "ground_truth_docs": [
+        "doc_632"
+      ],
+      "ground_truth_extracts": [
+        "允许使用视觉传感器，禁止使用微波传感器"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为2人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_269"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为2人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为4人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_127",
+        "doc_128"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为4人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "允许使用触觉传感器，禁止使用激光传感器",
+      "ground_truth_docs": [
+        "doc_398",
+        "doc_399"
+      ],
+      "ground_truth_extracts": [
+        "允许使用触觉传感器，禁止使用激光传感器"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "比赛现场提供当地标准USB-C直流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_871",
+        "doc_872"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准USB-C直流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "参赛作品提交截止时间为2026年5月25日18点",
+      "ground_truth_docs": [
+        "doc_543",
+        "doc_544"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2026年5月25日18点"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为4人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_878"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为4人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "比赛现场提供当地标准220V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_669"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准220V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "高中组的机器人可使用蓝牙遥控",
+      "ground_truth_docs": [
+        "doc_518"
+      ],
+      "ground_truth_extracts": [
+        "高中组的机器人可使用蓝牙遥控"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "比赛场地的尺寸为4米×3米，高度限制30米",
+      "ground_truth_docs": [
+        "doc_96"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为4米×3米，高度限制30米"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "机器人的单次运行时间限制为10分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_848"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为10分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为30cm×25cm×20cm",
+      "ground_truth_docs": [
+        "doc_943",
+        "doc_944"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为30cm×25cm×20cm"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "参赛作品提交截止时间为2025年4月25日18点",
+      "ground_truth_docs": [
+        "doc_477"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2025年4月25日18点"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "允许使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_174",
+        "doc_175"
+      ],
+      "ground_truth_extracts": [
+        "允许使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "机器人的电池电压不得超过15伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_189"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过15伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_711",
+        "doc_712"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "允许使用视觉传感器，禁止使用激光传感器",
+      "ground_truth_docs": [
+        "doc_719"
+      ],
+      "ground_truth_extracts": [
+        "允许使用视觉传感器，禁止使用激光传感器"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "参赛作品提交截止时间为2026年5月10日14点",
+      "ground_truth_docs": [
+        "doc_317"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2026年5月10日14点"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为3人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_642",
+        "doc_643"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为3人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "比赛现场提供当地标准USB-C直流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_368",
+        "doc_369"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准USB-C直流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "允许使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_431",
+        "doc_432"
+      ],
+      "ground_truth_extracts": [
+        "允许使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "允许使用超声波传感器，禁止使用激光传感器",
+      "ground_truth_docs": [
+        "doc_49"
+      ],
+      "ground_truth_extracts": [
+        "允许使用超声波传感器，禁止使用激光传感器"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为4人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_435"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为4人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "仅允许使用有线控制方式，禁止使用声波方式",
+      "ground_truth_docs": [
+        "doc_310",
+        "doc_311"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用有线控制方式，禁止使用声波方式"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "参赛作品提交截止时间为2026年7月25日12点",
+      "ground_truth_docs": [
+        "doc_635"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2026年7月25日12点"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "允许使用触觉传感器，禁止使用压力传感器",
+      "ground_truth_docs": [
+        "doc_497",
+        "doc_498"
+      ],
+      "ground_truth_extracts": [
+        "允许使用触觉传感器，禁止使用压力传感器"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "比赛场地的尺寸为5米×5米，高度限制20米",
+      "ground_truth_docs": [
+        "doc_781",
+        "doc_782"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为5米×5米，高度限制20米"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为5人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_823",
+        "doc_824"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为5人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "允许使用触觉传感器，禁止使用激光传感器",
+      "ground_truth_docs": [
+        "doc_635",
+        "doc_636"
+      ],
+      "ground_truth_extracts": [
+        "允许使用触觉传感器，禁止使用激光传感器"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "外观设计占总分的10%，主要考察美观性和模块化设计",
+      "ground_truth_docs": [
+        "doc_113",
+        "doc_114"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的10%，主要考察美观性和模块化设计"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "比赛场地的尺寸为2米×2米，高度限制25米",
+      "ground_truth_docs": [
+        "doc_718"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为2米×2米，高度限制25米"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "仅允许使用蓝牙控制方式，禁止使用声波方式",
+      "ground_truth_docs": [
+        "doc_394"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用蓝牙控制方式，禁止使用声波方式"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "初中组的机器人可使用无线遥控",
+      "ground_truth_docs": [
+        "doc_556",
+        "doc_557"
+      ],
+      "ground_truth_extracts": [
+        "初中组的机器人可使用无线遥控"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "机器人的重量限制为2千克（含电池）",
+      "ground_truth_docs": [
+        "doc_547"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为2千克（含电池）"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "仅允许使用有线控制方式，禁止使用声波方式",
+      "ground_truth_docs": [
+        "doc_479",
+        "doc_480"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用有线控制方式，禁止使用声波方式"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "机器人的重量限制为2千克（含电池）",
+      "ground_truth_docs": [
+        "doc_794"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为2千克（含电池）"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "参赛作品提交截止时间为2025年6月25日12点",
+      "ground_truth_docs": [
+        "doc_155"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2025年6月25日12点"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "参赛作品提交截止时间为2026年6月10日12点",
+      "ground_truth_docs": [
+        "doc_877"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2026年6月10日12点"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "允许使用触觉传感器，禁止使用微波传感器",
+      "ground_truth_docs": [
+        "doc_80"
+      ],
+      "ground_truth_extracts": [
+        "允许使用触觉传感器，禁止使用微波传感器"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "允许使用超声波传感器，禁止使用微波传感器",
+      "ground_truth_docs": [
+        "doc_151",
+        "doc_152"
+      ],
+      "ground_truth_extracts": [
+        "允许使用超声波传感器，禁止使用微波传感器"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "外观设计占总分的10%，主要考察轻量化和模块化设计",
+      "ground_truth_docs": [
+        "doc_997",
+        "doc_998"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的10%，主要考察轻量化和模块化设计"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "机器人的电池电压不得超过12伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_772"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过12伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "允许使用触觉传感器，禁止使用压力传感器",
+      "ground_truth_docs": [
+        "doc_824"
+      ],
+      "ground_truth_extracts": [
+        "允许使用触觉传感器，禁止使用压力传感器"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "有条件允许使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_430"
+      ],
+      "ground_truth_extracts": [
+        "有条件允许使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "参赛作品提交截止时间为2026年5月15日16点",
+      "ground_truth_docs": [
+        "doc_174",
+        "doc_175"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2026年5月15日16点"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "评分标准包含功能完成度、操作便捷性、成本控制三个核心维度",
+      "ground_truth_docs": [
+        "doc_711",
+        "doc_712"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含功能完成度、操作便捷性、成本控制三个核心维度"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为4人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_965",
+        "doc_966"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为4人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "机器人的电池电压不得超过9伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_720"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过9伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_119",
+        "doc_120"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准110V交流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "机器人的电池电压不得超过15伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_618",
+        "doc_619"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过15伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "禁止使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_402",
+        "doc_403"
+      ],
+      "ground_truth_extracts": [
+        "禁止使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "机器人的重量限制为3千克（含电池）",
+      "ground_truth_docs": [
+        "doc_710"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为3千克（含电池）"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "评分标准包含创新设计、能耗效率、成本控制三个核心维度",
+      "ground_truth_docs": [
+        "doc_223",
+        "doc_224"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含创新设计、能耗效率、成本控制三个核心维度"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "机器人的单次运行时间限制为8分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_220",
+        "doc_221"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为8分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "参赛作品提交截止时间为2026年7月25日12点",
+      "ground_truth_docs": [
+        "doc_493",
+        "doc_494"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2026年7月25日12点"
+      ]
+    },
+    {
+      "question": "参赛作品的提交截止时间是什么时候？",
+      "ground_truth_answer": "允许使用红外传感器，禁止使用微波传感器",
+      "ground_truth_docs": [
+        "doc_85",
+        "doc_86"
+      ],
+      "ground_truth_extracts": [
+        "允许使用红外传感器，禁止使用微波传感器"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "允许使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_590",
+        "doc_591"
+      ],
+      "ground_truth_extracts": [
+        "允许使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "机器人的重量限制为2千克（含电池）",
+      "ground_truth_docs": [
+        "doc_700"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为2千克（含电池）"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "高中组的机器人可使用无线遥控",
+      "ground_truth_docs": [
+        "doc_652"
+      ],
+      "ground_truth_extracts": [
+        "高中组的机器人可使用无线遥控"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "机器人的单次运行时间限制为10分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_564",
+        "doc_565"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为10分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "小学低年级组的机器人可使用无线遥控",
+      "ground_truth_docs": [
+        "doc_519",
+        "doc_520"
+      ],
+      "ground_truth_extracts": [
+        "小学低年级组的机器人可使用无线遥控"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "比赛场地的尺寸为2米×2米，高度限制20米",
+      "ground_truth_docs": [
+        "doc_629",
+        "doc_630"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为2米×2米，高度限制20米"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "机器人的电池电压不得超过6伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_613"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过6伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "禁止使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_394",
+        "doc_395"
+      ],
+      "ground_truth_extracts": [
+        "禁止使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "初赛侧重功能验证，复赛侧重复杂任务，决赛增加现场答辩环节",
+      "ground_truth_docs": [
+        "doc_898"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重功能验证，复赛侧重复杂任务，决赛增加现场答辩环节"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "外观设计占总分的20%，主要考察美观性和环保材料",
+      "ground_truth_docs": [
+        "doc_43"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的20%，主要考察美观性和环保材料"
+      ]
+    },
+    {
+      "question": "比赛场地的尺寸是多少米？",
+      "ground_truth_answer": "有条件允许使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_359"
+      ],
+      "ground_truth_extracts": [
+        "有条件允许使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "机器人的单次运行时间限制为5分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_832"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为5分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "禁止使用预训练AI模型，需提前报备模型名称和版本",
+      "ground_truth_docs": [
+        "doc_607",
+        "doc_608"
+      ],
+      "ground_truth_extracts": [
+        "禁止使用预训练AI模型，需提前报备模型名称和版本"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "允许使用超声波传感器，禁止使用压力传感器",
+      "ground_truth_docs": [
+        "doc_897"
+      ],
+      "ground_truth_extracts": [
+        "允许使用超声波传感器，禁止使用压力传感器"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "机器人的电池电压不得超过6伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_661",
+        "doc_662"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过6伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "小学高年级组的机器人可使用红外遥控",
+      "ground_truth_docs": [
+        "doc_40"
+      ],
+      "ground_truth_extracts": [
+        "小学高年级组的机器人可使用红外遥控"
+      ]
+    },
+    {
+      "question": "比赛现场提供什么类型的电源接口？",
+      "ground_truth_answer": "比赛场地的尺寸为3米×3米，高度限制30米",
+      "ground_truth_docs": [
+        "doc_71",
+        "doc_72"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为3米×3米，高度限制30米"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "比赛场地的尺寸为2米×4米，高度限制35米",
+      "ground_truth_docs": [
+        "doc_578",
+        "doc_579"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为2米×4米，高度限制35米"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "小学低年级组的机器人可使用无线遥控",
+      "ground_truth_docs": [
+        "doc_984",
+        "doc_985"
+      ],
+      "ground_truth_extracts": [
+        "小学低年级组的机器人可使用无线遥控"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为5人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_256"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为5人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为35cm×30cm×30cm",
+      "ground_truth_docs": [
+        "doc_708",
+        "doc_709"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为35cm×30cm×30cm"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "初赛侧重功能验证，复赛侧重复杂任务，决赛增加现场答辩环节",
+      "ground_truth_docs": [
+        "doc_205",
+        "doc_206"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重功能验证，复赛侧重复杂任务，决赛增加现场答辩环节"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "参赛作品提交截止时间为2025年5月10日14点",
+      "ground_truth_docs": [
+        "doc_897",
+        "doc_898"
+      ],
+      "ground_truth_extracts": [
+        "参赛作品提交截止时间为2025年5月10日14点"
+      ]
+    },
+    {
+      "question": "是否允许使用预训练的AI模型辅助控制？",
+      "ground_truth_answer": "仅允许使用有线控制方式，禁止使用声波方式",
+      "ground_truth_docs": [
+        "doc_616"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用有线控制方式，禁止使用声波方式"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "仅允许使用WiFi控制方式，禁止使用声波方式",
+      "ground_truth_docs": [
+        "doc_749"
+      ],
+      "ground_truth_extracts": [
+        "仅允许使用WiFi控制方式，禁止使用声波方式"
+      ]
+    },
+    {
+      "question": "第七届全国青少年人工智能创新挑战赛对机器人尺寸有什么要求？",
+      "ground_truth_answer": "比赛场地的尺寸为2米×2米，高度限制25米",
+      "ground_truth_docs": [
+        "doc_553",
+        "doc_554"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为2米×2米，高度限制25米"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "允许使用红外传感器，禁止使用激光传感器",
+      "ground_truth_docs": [
+        "doc_242",
+        "doc_243"
+      ],
+      "ground_truth_extracts": [
+        "允许使用红外传感器，禁止使用激光传感器"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "评分标准包含运行稳定性、能耗效率、成本控制三个核心维度",
+      "ground_truth_docs": [
+        "doc_606"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含运行稳定性、能耗效率、成本控制三个核心维度"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "机器人的单次运行时间限制为3分钟，超时将扣分",
+      "ground_truth_docs": [
+        "doc_492"
+      ],
+      "ground_truth_extracts": [
+        "机器人的单次运行时间限制为3分钟，超时将扣分"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "外观设计占总分的5%，主要考察实用性和模块化设计",
+      "ground_truth_docs": [
+        "doc_471",
+        "doc_472"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的5%，主要考察实用性和模块化设计"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为35cm×20cm×25cm",
+      "ground_truth_docs": [
+        "doc_1000",
+        "doc_1001"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为35cm×20cm×25cm"
+      ]
+    },
+    {
+      "question": "比赛的初赛和复赛规则有什么不同？",
+      "ground_truth_answer": "比赛场地的尺寸为5米×2米，高度限制25米",
+      "ground_truth_docs": [
+        "doc_165",
+        "doc_166"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为5米×2米，高度限制25米"
+      ]
+    },
+    {
+      "question": "参赛队伍的人数上限是多少？",
+      "ground_truth_answer": "比赛场地的尺寸为2米×4米，高度限制30米",
+      "ground_truth_docs": [
+        "doc_764",
+        "doc_765"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为2米×4米，高度限制30米"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为5人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_181",
+        "doc_182"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为5人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "评分标准包含运行稳定性、操作便捷性、成本控制三个核心维度",
+      "ground_truth_docs": [
+        "doc_923",
+        "doc_924"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含运行稳定性、操作便捷性、成本控制三个核心维度"
+      ]
+    },
+    {
+      "question": "机器人的控制方式有哪些限制？",
+      "ground_truth_answer": "初赛侧重功能验证，复赛侧重多场景适配，决赛增加现场答辩环节",
+      "ground_truth_docs": [
+        "doc_405"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重功能验证，复赛侧重多场景适配，决赛增加现场答辩环节"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "评分标准包含功能完成度、响应速度、故障恢复能力三个核心维度",
+      "ground_truth_docs": [
+        "doc_215"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含功能完成度、响应速度、故障恢复能力三个核心维度"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "初赛侧重功能验证，复赛侧重复杂任务，决赛增加技术创新点评环节",
+      "ground_truth_docs": [
+        "doc_842",
+        "doc_843"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重功能验证，复赛侧重复杂任务，决赛增加技术创新点评环节"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "机器人的电池电压不得超过9伏，避免安全隐患",
+      "ground_truth_docs": [
+        "doc_700",
+        "doc_701"
+      ],
+      "ground_truth_extracts": [
+        "机器人的电池电压不得超过9伏，避免安全隐患"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "初赛侧重稳定性测试，复赛侧重多场景适配，决赛增加现场答辩环节",
+      "ground_truth_docs": [
+        "doc_734",
+        "doc_735"
+      ],
+      "ground_truth_extracts": [
+        "初赛侧重稳定性测试，复赛侧重多场景适配，决赛增加现场答辩环节"
+      ]
+    },
+    {
+      "question": "比赛允许使用的传感器类型有哪些？",
+      "ground_truth_answer": "外观设计占总分的5%，主要考察美观性和环保材料",
+      "ground_truth_docs": [
+        "doc_36",
+        "doc_37"
+      ],
+      "ground_truth_extracts": [
+        "外观设计占总分的5%，主要考察美观性和环保材料"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "比赛场地的尺寸为4米×3米，高度限制35米",
+      "ground_truth_docs": [
+        "doc_445",
+        "doc_446"
+      ],
+      "ground_truth_extracts": [
+        "比赛场地的尺寸为4米×3米，高度限制35米"
+      ]
+    },
+    {
+      "question": "机器人的重量限制是多少千克？",
+      "ground_truth_answer": "比赛现场提供当地标准USB-C直流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_301",
+        "doc_302"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准USB-C直流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "机器人的运行时间限制是多少分钟？",
+      "ground_truth_answer": "评分标准包含运行稳定性、操作便捷性、故障恢复能力三个核心维度",
+      "ground_truth_docs": [
+        "doc_310",
+        "doc_311"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含运行稳定性、操作便捷性、故障恢复能力三个核心维度"
+      ]
+    },
+    {
+      "question": "机器人的电池电压限制是多少伏？",
+      "ground_truth_answer": "高中组的机器人可使用无线遥控",
+      "ground_truth_docs": [
+        "doc_377"
+      ],
+      "ground_truth_extracts": [
+        "高中组的机器人可使用无线遥控"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "比赛现场提供当地标准USB-C直流电源接口，参赛队需自行准备转换器",
+      "ground_truth_docs": [
+        "doc_829"
+      ],
+      "ground_truth_extracts": [
+        "比赛现场提供当地标准USB-C直流电源接口，参赛队需自行准备转换器"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "机器人在出发区内的最大尺寸为20cm×35cm×20cm",
+      "ground_truth_docs": [
+        "doc_843"
+      ],
+      "ground_truth_extracts": [
+        "机器人在出发区内的最大尺寸为20cm×35cm×20cm"
+      ]
+    },
+    {
+      "question": "比赛的评分标准包含哪些维度？",
+      "ground_truth_answer": "每支参赛队伍的人数上限为5人，包含指导老师1名",
+      "ground_truth_docs": [
+        "doc_303",
+        "doc_304"
+      ],
+      "ground_truth_extracts": [
+        "每支参赛队伍的人数上限为5人，包含指导老师1名"
+      ]
+    },
+    {
+      "question": "小学低年级组的机器人是否可以使用无线遥控？",
+      "ground_truth_answer": "评分标准包含运行稳定性、操作便捷性、环境适应性三个核心维度",
+      "ground_truth_docs": [
+        "doc_387"
+      ],
+      "ground_truth_extracts": [
+        "评分标准包含运行稳定性、操作便捷性、环境适应性三个核心维度"
+      ]
+    },
+    {
+      "question": "机器人的外观设计是否有评分项？",
+      "ground_truth_answer": "机器人的重量限制为3千克（含电池）",
+      "ground_truth_docs": [
+        "doc_994"
+      ],
+      "ground_truth_extracts": [
+        "机器人的重量限制为3千克（含电池）"
+      ]
+    }
+  ]

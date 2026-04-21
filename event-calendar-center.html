@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛事日历中心</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', 'Arial', sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        .page-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2d3748;
+            font-weight: 600;
+            position: relative;
+        }
+        .page-title::after {
+            content: "";
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #4299e1, #38b2ac);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        /* 日历样式 */
+        .calendar-container {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .calendar-header h3 {
+            color: #2d3748;
+            font-size: 18px;
+        }
+        .weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .weekday {
+            text-align: center;
+            font-weight: 500;
+            color: #718096;
+            font-size: 14px;
+            padding: 8px 0;
+        }
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+        .calendar-day {
+            padding: 15px 10px;
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+            min-height: 70px;
+            position: relative;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .calendar-day:hover {
+            background-color: #f8fafc;
+            border-color: #e2e8f0;
+        }
+        .calendar-day.empty {
+            border: none;
+            cursor: default;
+        }
+        .calendar-day.empty:hover {
+            background: none;
+        }
+        .calendar-day.today {
+            background-color: #e8f4f8;
+            border-color: #4299e1;
+            font-weight: 600;
+        }
+        .has-event::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(135deg, #e53e3e, #ed8936);
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            box-shadow: 0 2px 4px rgba(229, 62, 62, 0.3);
+        }
+        .event-tooltip {
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2d3748;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            width: 200px;
+            display: none;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .has-event:hover .event-tooltip {
+            display: block;
+        }
+        /* 赛事列表样式 */
+        .events-container {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            padding: 25px;
+        }
+        .events-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .events-header h3 {
+            color: #2d3748;
+            font-size: 18px;
+        }
+        .event-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .event-item {
+            border: 1px solid #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            background: linear-gradient(180deg, #fff, #fafafa);
+        }
+        .event-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            border-color: #e2e8f0;
+        }
+        .event-item h4 {
+            color: #2d3748;
+            margin-bottom: 12px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+        .event-item h4::before {
+            content: "🏆";
+            margin-right: 8px;
+        }
+        .event-item p {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #4a5568;
+        }
+        .event-item .date {
+            color: #718096;
+            font-size: 13px;
+        }
+        .event-item .official-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 6px 12px;
+            background: linear-gradient(90deg, #4299e1, #38b2ac);
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .event-item .official-link:hover {
+            opacity: 0.9;
+            transform: scale(1.03);
+        }
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .event-list {
+                grid-template-columns: 1fr;
+            }
+            .calendar-day {
+                padding: 10px 5px;
+                min-height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="page-title">📅 赛事日历中心&lt;/h2&gt;
+
+        <!-- 日历区域 -->
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <h3 id="current-month">2025年10月</h3>
+            </div>
+            <div class="weekdays">
+                <div class="weekday">周日</div>
+                <div class="weekday">周一</div>
+                <div class="weekday">周二</div>
+                <div class="weekday">周三</div>
+                <div class="weekday">周四</div>
+                <div class="weekday">周五</div>
+                <div class="weekday">周六</div>
+            </div>
+            <div class="calendar" id="calendar"></div>
+        </div><!-- 赛事列表区域 -->
+        <div class="events-container">
+            <div class="events-header">
+                <h3>🏆 全部赛事列表</h3>
+            </div>
+            <div class="event-list" id="event-list"></div>
+        </div>
+    </div>
+
+<script>
+// 从后端获取赛事数据
+fetch("/api/events").then(res => res.json()).then(events => {
+    renderCalendar(events);
+    renderEventList(events);
+    updateCurrentMonth();
+});
+
+// 更新当前月份显示
+function updateCurrentMonth() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1; // 月份从0开始，+1转为正常月份
+    document.getElementById("current-month").innerText = `${year}年${month}月`;
+}
+
+// 渲染日历
+function renderCalendar(events) {
+    const cal = document.getElementById("calendar");
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth();
+    const firstDay = new Date(year, month, 1).getDay() || 7; // 周日为7
+    const daysInMonth = new Date(year, month + 1, 0).getDate(); // 当月天数
+
+    // 清空日历
+    cal.innerHTML = "";
+
+    // 填充空白格子（月初之前）
+    for (let i = 1; i < firstDay; i++) {
+        const emptyDay = document.createElement("div");
+        emptyDay.className = "calendar-day empty";
+        cal.appendChild(emptyDay);
+    }
+
+    // 填充当月天数
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dayEl = document.createElement("div");
+        dayEl.className = "calendar-day";
+        dayEl.innerText = day;
+
+        // 标记今天
+        if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+            dayEl.classList.add("today");
+        }
+
+        // 检查当天是否有赛事
+        const dayEvents = events.filter(e => {
+            const eventDate = new Date(e.event_date);
+            return eventDate.getDate() === day && eventDate.getMonth() === month && eventDate.getFullYear() === year;
+        });
+
+        if (dayEvents.length > 0) {
+            dayEl.classList.add("has-event");
+            // 添加赛事提示框
+            const tooltip = document.createElement("div");
+            tooltip.className = "event-tooltip";
+            tooltip.innerText = dayEvents.map(e => e.title).join("、");
+            dayEl.appendChild(tooltip);
+        }
+
+        cal.appendChild(dayEl);
+    }
+}
+
+// 渲染赛事列表
+function renderEventList(events) {
+    const el = document.getElementById("event-list");
+    el.innerHTML = ""; // 清空列表
+
+    // 按日期排序（升序）
+    events.sort((a, b) => new Date(a.event_date) - new Date(b.event_date));
+
+    events.forEach(e => {
+        // 格式化日期
+        const eventDate = new Date(e.event_date);
+        const formatDate = `${eventDate.getFullYear()}年${eventDate.getMonth() + 1}月${eventDate.getDate()}日`;
+
+        el.innerHTML += `
+        <div class="event-item">
+            <h4>${e.title}</h4>
+            <p class="date">📅 举办时间：${formatDate}</p>
+            <p>📝 报名说明：${e.description || "暂无说明"}</p>
+            <a href="${e.official_url}" target="_blank" class="official-link">🔗 访问赛事官网</a>
+        </div>`;
+    });
+
+    // 若没有赛事，显示提示
+    if (events.length === 0) {
+        el.innerHTML = `<div style="text-align: center; padding: 40px; color: #718096;">暂无赛事信息，敬请期待...</div>`;
+    }
+}
+</script>
+</body>
+</html>

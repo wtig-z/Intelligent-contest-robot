@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 智能竞赛客服机器人</title>
+    <link rel="stylesheet" href="/static/css/auth.css">
+</head>
+<body>
+    <div class="auth-page">
+        <div class="auth-card">
+            <h1>智能竞赛客服机器人</h1>
+            <h2 id="loginTitle">登录</h2>
+            <div id="formAlert" class="auth-alert" role="alert" aria-live="polite"></div>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="用户名" required>
+                <input type="password" id="password" placeholder="密码" required>
+                <button type="submit">登录</button>
+            </form>
+            <p class="auth-link">没有账号？<a href="/register">注册</a> &nbsp;|&nbsp; <a href="/forgot-password">忘记密码？</a></p>
+            <p id="entryLink" class="auth-link">管理员入口：<a href="/admin">管理后台</a>（需管理员账号登录）</p>
+        </div>
+    </div>
+    <script src="/static/js/logger.js"></script>
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+    <script>
+        // mode=admin 时把文案切换为“后台登录”（主流做法：同一登录页根据入口切换提示）
+        (function() {
+            const mode = new URLSearchParams(window.location.search).get('mode');
+            if (mode === 'admin') {
+                document.title = '后台登录 - 智能竞赛客服机器人';
+                const t = document.getElementById('loginTitle');
+                if (t) t.textContent = '后台登录';
+            }
+        })();
+
+        // 入口切换：后台登录模式展示“用户入口”，普通模式展示“管理员入口”
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const mode = urlParams.get('mode');
+            const next = urlParams.get('next');
+            const entry = document.getElementById('entryLink');
+            if (!entry) return;
+            if (mode === 'admin') {
+                const href = next ? ('/login?next=' + encodeURIComponent(next)) : '/login';
+                entry.innerHTML = '智能竞赛客服机器人入口：<a href="' + href + '">用户登录</a>';
+            } else {
+                entry.innerHTML = '管理员入口：<a href="/admin">管理后台</a>（需管理员账号登录）';
+            }
+        })();
+
+        // 统一显示“未登录提示”（从其它页面跳转过来时写入 sessionStorage）
+        (function() {
+            const alertEl = document.getElementById('formAlert');
+            function showInfo(msg) {
+                if (!alertEl) return;
+                alertEl.textContent = msg || '';
+                alertEl.className = 'auth-alert is-visible';
+            }
+            try {
+                const tip = sessionStorage.getItem('flash_login_tip');
+                if (tip) {
+                    sessionStorage.removeItem('flash_login_tip');
+                    showInfo(tip);
+                }
+            } catch (e) {}
+        })();
+
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            const alertEl = document.getElementById('formAlert');
+            function showError(msg) {
+                alertEl.textContent = msg || '登录失败';
+                alertEl.className = 'auth-alert is-visible is-error';
+            }
+            function clearAlert() {
+                alertEl.textContent = '';
+                alertEl.className = 'auth-alert';
+            }
+            const btn = this.querySelector('button');
+            btn.disabled = true;
+            clearAlert();
+            try {
+                const cli = window.axios.create({ baseURL: window.API_BASE || '', withCredentials: true, timeout: 30000 });
+                const res = await cli.post('/api/auth/login', { username, password });
+                const data = res.data || {};
+                if (data.code === 0) {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const mode = urlParams.get('mode');
+                    // 登录成功后必须覆盖本地 token，避免旧 token 继续出现在请求头里
+                    localStorage.setItem('token', data.data.token);
+                    localStorage.setItem('username', data.data.username);
+                    // 写入 cookie 供后端 /admin 路由校验
+                    document.cookie = `token=${encodeURIComponent(data.data.token)}; Path=/; SameSite=Lax`;
+
+                    // 额外写入 user_id / is_admin（供前端工程化日志与权限判断使用）
+                    try {
+                        const meCli = window.axios.create({
+                            baseURL: window.API_BASE || '',
+                            withCredentials: true,
+                            timeout: 15000,
+                            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + data.data.token }
+                        });
+                        const meRes = await meCli.get('/api/auth/me');
+                        const meData = meRes.data || {};
+                        if (meData.code === 0 && meData.data) {
+                            localStorage.setItem('user_id', String(meData.data.id));
+                            localStorage.setItem('is_admin', String(meData.data.role === 'admin'));
+                        }
+                    } catch (e) {
+                        // 不影响登录主流程
+                    }
+                    if (data.data.need_change_password) {
+                        window.location.href = '/change-password';
+                        return;
+                    }
+                    // 管理后台登录模式：需具备后台访问角色（admin / viewer）
+                    if (mode === 'admin' && !['admin', 'viewer'].includes(data.data.role)) {
+                        showError('非管理员账号！');
+                        // 清理刚写入的登录态（避免用户以为登录成功但进不去）
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('username');
+                        document.cookie = 'token=; Path=/; Max-Age=0; SameSite=Lax';
+                        return;
+                    }
+
+                    const next = urlParams.get('next');
+                    // next 只允许站内路径
+                    if (next && next.startsWith('/')) {
+                        window.location.href = next;
+                    } else if (mode === 'admin') {
+                        window.location.href = '/admin';
+                    } else {
+                        window.location.href = data.data.role === 'admin' ? '/admin' : '/volc-kb';
+                    }
+                } else {
+                    showError(data.message || data.error || '登录失败');
+                }
+            } catch (err) {
+                showError((err && err.response && err.response.data && (err.response.data.message || err.response.data.error)) || ('请求失败: ' + (err.message || '')));
+            } finally {
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

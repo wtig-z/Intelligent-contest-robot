@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对话历史 - 智能竞赛客服机器人</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h1>智能竞赛客服机器人后台</h1>
+                <span class="role">管理员</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="/admin" class="nav-item">仪表盘</a>
+                <a href="/admin/pdf_manage.html" class="nav-item">文档管理</a>
+                <a href="/admin/indexes_manage.html" class="nav-item">索引与图谱</a>
+                <a href="/admin/tasks_manage.html" class="nav-item">任务控制台</a>
+                <a href="/admin/logs_manage.html" class="nav-item">日志中心</a>
+                <a href="/admin/question_manage.html" class="nav-item active">对话历史</a>
+                <a href="/admin/vector_manage.html" class="nav-item" data-require="admin">向量明细</a>
+                <a href="/admin/graphrag_manage.html" class="nav-item" data-require="admin">图谱构建</a>
+                <a href="/admin/settings_manage.html" class="nav-item" data-require="admin">系统配置</a>
+                <a href="/admin/exports_manage.html" class="nav-item" data-require="admin">导出报表</a>
+                <a href="/admin/user_manage.html" class="nav-item" data-require="admin">用户权限</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="/volc-kb">返回问答</a> | <a href="#" id="logout">退出</a>
+            </div>
+        </aside>
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>对话历史</h1>
+                <p>用户问题、回答摘要、引擎与引用依据；支持筛选</p>
+            </header>
+            <div class="admin-content">
+                <section class="card">
+                    <h2>筛选</h2>
+                    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+                        <label>用户ID <input type="number" id="fUser" style="width:100px;"></label>
+                        <label>赛事关键词 <input type="text" id="fContest" placeholder="pdf 名或赛事"></label>
+                        <label>全文关键词 <input type="text" id="fKw"></label>
+                        <label>起始日期 <input type="date" id="fFrom"></label>
+                        <label>结束日期 <input type="date" id="fTo"></label>
+                        <button type="button" class="btn-primary" id="btnSearch">查询</button>
+                    </div>
+                </section>
+                <section class="card">
+                    <h2>列表（共 <span id="totalCount">0</span> 条）</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>用户</th>
+                                <th>问题</th>
+                                <th>回答</th>
+                                <th>引擎</th>
+                                <th>赛事</th>
+                                <th>依据摘要</th>
+                                <th>时间</th>
+                            </tr>
+                        </thead>
+                        <tbody id="questionList"></tbody>
+                    </table>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/logger.js"></script>
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/admin/common.js"></script>
+    <script src="/static/js/admin/question_manage.js"></script>
+</body>
+</html>

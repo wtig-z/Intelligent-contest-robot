@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册 - 智能竞赛客服机器人</title>
+    <link rel="stylesheet" href="/static/css/auth.css">
+</head>
+<body>
+    <div class="auth-page">
+        <div class="auth-card">
+            <h1>智能竞赛客服机器人</h1>
+            <h2>注册</h2>
+            <div id="formAlert" class="auth-alert" role="alert" aria-live="polite"></div>
+            <form id="registerForm">
+                <input type="text" id="username" placeholder="用户名（至少2位）" required minlength="2">
+                <input type="tel" id="phone" placeholder="手机号（必填，11位，用于接收重置密码短信）" required maxlength="11" pattern="[0-9]{11}">
+                <input type="password" id="password" placeholder="密码（至少6位）" required minlength="6">
+                <input type="password" id="password2" placeholder="确认密码" required>
+                <button type="submit">注册</button>
+            </form>
+            <p class="auth-link">已有账号？<a href="/login">登录</a></p>
+        </div>
+    </div>          
+    <script src="/static/js/logger.js"></script>
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async function(e) {
+            // 监听注册表单的提交事件
+            e.preventDefault(); // 阻止表单默认提交行为（刷新页面）
+
+            // 获取各输入框的值
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;      // 密码
+            const password2 = document.getElementById('password2').value;   // 确认密码
+            const phone = document.getElementById('phone').value.trim();    // 手机号
+            const alertEl = document.getElementById('formAlert');           // 用于展示提示信息的元素
+
+            // 展示错误信息的辅助函数
+            function showError(msg) {
+                alertEl.textContent = msg || '注册失败';
+                alertEl.className = 'auth-alert is-visible is-error';
+            }
+            // 清除提示信息
+            function clearAlert() {
+                alertEl.textContent = '';
+                alertEl.className = 'auth-alert';
+            }
+
+            // 前端对手机号进行校验（必须为11位数字，且以1开头）
+            if (!phone || !/^1\d{10}$/.test(phone)) {
+                showError('请填写有效的11位手机号');
+                return; // 校验不通过，停止后续提交
+            }
+            // 检查两次密码是否一致
+            if (password !== password2) {
+                showError('两次密码不一致');
+                return;
+            }
+
+            // 禁用提交按钮，避免重复提交
+            const btn = this.querySelector('button');
+            btn.disabled = true;
+            clearAlert();
+
+            try {
+                // 调用后端注册API，发送用户名、密码和手机号
+                // fetch 实际上是向后端 API 发送 HTTP 请求的方式，无论前后端是否在同一个服务器/协议下，这里就像在同一个脚本中调用接口一样可以获取返回的数据
+                const cli = window.axios.create({ baseURL: window.API_BASE || '', withCredentials: true, timeout: 30000 });
+                const res = await cli.post('/api/auth/register', { username, password, phone });
+                const data = res.data || {};
+                if (data.code === 0) {
+                    // 注册成功，保存token和用户名到localStorage，并跳转到主页
+                    localStorage.setItem('token', data.data.token);
+                    localStorage.setItem('username', data.data.username);
+                    // 写入 cookie 供后端页面路由（如 /admin）读取
+                    try { document.cookie = `token=${encodeURIComponent(data.data.token)}; Path=/; SameSite=Lax`; } catch (e) {}
+
+                    // 额外写入 user_id / is_admin（避免 chat.js 误判“脏登录态”）
+                    try {
+                        const meCli = window.axios.create({
+                            baseURL: window.API_BASE || '',
+                            withCredentials: true,
+                            timeout: 15000,
+                            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + data.data.token }
+                        });
+                        const meRes = await meCli.get('/api/auth/me');
+                        const meData = meRes.data || {};
+                        if (meData.code === 0 && meData.data) {
+                            localStorage.setItem('user_id', String(meData.data.id));
+                            localStorage.setItem('is_admin', String(meData.data.role === 'admin'));
+                        }
+                    } catch (e) {}
+                    window.location.href = '/volc-kb';
+                } else {
+                    // 注册失败，展示后端返回的错误信息
+                    showError(data.message || data.error || '注册失败');
+                }
+            } catch (err) {
+                // 网络异常或者其它错误
+                showError('请求失败: ' + err.message);
+            } finally {
+                // 恢复按钮可用
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

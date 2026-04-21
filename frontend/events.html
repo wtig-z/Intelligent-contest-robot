@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛事信息中心</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.5;
+        }
+        /* 容器：控制整体宽度+居中，适配不同屏幕 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        /* 页面标题：强化视觉层级 */
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .page-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+        .page-desc {
+            font-size: 14px;
+            color: #718096;
+        }
+
+        /* 搜索组件样式 */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            font-size: 14px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+        }
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #718096;
+            font-size: 16px;
+        }
+
+        /* 日历区域：提高层级，使日期弹层可叠在下方赛事卡片之上；不与 sticky 混用故不会挡住列表滚动 */
+        .calendar-wrap {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            position: relative;
+            z-index: 200;
+            isolation: isolate;
+        }
+        /* 外层包裹：预留弹窗空间，避免遮挡下方内容 */
+        .calendar-outer {
+            width: 100%;
+            max-width: 760px;
+            margin: 0 auto;
+            position: relative;
+            padding-bottom: 40px;
+            overflow: visible;
+        }
+        .calendar-container {
+            width: 100%;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f0f0f0;
+            /* 必须为 visible，否则弹层伸出日历底边时被裁切 */
+            overflow: visible;
+        }
+        .calendar-title {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .calendar-title .cal-title-text {
+            font-size: 18px;
+            color: #2d3748;
+            font-weight: 500;
+        }
+        .calendar-title span {
+            font-size: 14px;
+            color: #718096;
+        }
+        .cal-controls{
+            display:flex;
+            align-items:center;
+            gap:8px;
+            flex-wrap:wrap;
+            justify-content:flex-end;
+        }
+        .cal-btn{
+            border:1px solid #e2e8f0;
+            background:#fff;
+            border-radius:10px;
+            padding:6px 10px;
+            font-size:13px;
+            cursor:pointer;
+            color:#4a5568;
+            transition:all .2s;
+        }
+        .cal-btn:hover{background:#f0f8fb;border-color:#cfe8ff;color:#2b6cb0}
+        .cal-select{
+            border:1px solid #e2e8f0;
+            background:#fff;
+            border-radius:10px;
+            padding:6px 10px;
+            font-size:13px;
+            color:#4a5568;
+        }
+        /* 日历星期/日期布局 */
+        .calendar-week {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .calendar-week-item {
+            font-size: 12px;
+            color: #718096;
+            padding: 8px 0;
+            font-weight: 500;
+        }
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            position: relative;
+            z-index: 1;
+            overflow: visible;
+        }
+        .calendar-cell {
+            height: 80px;
+            padding: 8px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+            overflow: visible;
+        }
+        .calendar-cell:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+        }
+        .calendar-cell.active {
+            background: linear-gradient(135deg, #e6f7ff 0%, #f0f9ff 100%);
+            border-color: #90cdf4;
+        }
+        .calendar-cell.today {
+            background: linear-gradient(135deg, #e8f4f8, #f0f8fb);
+            border-color: #90cdf4;
+            border-left: 3px solid #42a5f5;
+        }
+        .calendar-cell.has-event {
+            border-left: 3px solid #4299e1;
+        }
+        /* 同一 grid 里排在后面的格子会盖住前面格子里的绝对定位弹层，必须把当前格整体抬到上层 */
+        .calendar-cell.has-event:hover,
+        .calendar-cell.has-event.popup-open {
+            z-index: 80;
+        }
+        .calendar-cell.empty {
+            cursor: default;
+            border-color: #f8fafc;
+            background: #f8fafc;
+        }
+        .calendar-cell.empty:hover {
+            transform: none;
+            box-shadow: none;
+        }
+        .cell-date {
+            font-size: 14px;
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .cell-event {
+            font-size: 11px;
+            color: #4299e1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* 赛事弹窗：右侧优先，空间不足时左侧 */
+        .event-popup {
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-left: 8px;
+            width: 300px;
+            padding: 16px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.04);
+            z-index: 5000;
+            display: none;
+            max-width: calc(100vw - 40px);
+            pointer-events: auto;
+        }
+        .calendar-cell.popup-left .event-popup {
+            left: auto;
+            right: 100%;
+            margin-left: 0;
+            margin-right: 8px;
+        }
+        .calendar-cell.has-event:hover .event-popup,
+        .calendar-cell.has-event.popup-open .event-popup {
+            display: block;
+        }
+        .popup-title {
+            font-size: 15px;
+            font-weight: 500;
+            color: #2d3748;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .popup-info {
+            font-size: 12px;
+            color: #4a5568;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            word-wrap: break-word;
+            white-space: normal;
+        }
+        .popup-btns {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .popup-btn {
+            padding: 6px 16px;
+            border-radius: 8px;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-pdf { background: #9f7aea; }
+        .btn-pdf:hover { background: #805ad5; }
+        .btn-website { background: #4299e1; }
+        .btn-website:hover { background: #3182ce; }
+
+        @media (max-width: 768px) {
+            .calendar-cell { height: 60px; }
+            .event-popup { width: 250px; }
+        }
+
+        /* 赛事列表样式 */
+        .event-section {
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        .event-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        /* 升级后的赛事卡片 */
+        .event-card {
+            background: linear-gradient(180deg, #ffffff, #fafafa);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            border: 1px solid #f0f0f0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        /* 卡片顶部装饰条 */
+        .event-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4299e1, #38b2ac);
+        }
+        .event-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            border-color: #e2e8f0;
+        }
+        .event-card h3 {
+            font-size: 20px;
+            color: #2d3748;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        .event-card .info-item {
+            font-size: 14px;
+            color: #4a5568;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .event-card .info-item::before {
+            content: "✦";
+            width: 16px;
+            height: 16px;
+            color: #4299e1;
+            font-size: 12px;
+            margin-right: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .event-card .official-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #4299e1, #38b2ac);
+            color: #fff;
+            border-radius: 10px;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(66, 153, 225, 0.2);
+        }
+        .event-card .official-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+        }
+
+        /* 分页样式 */
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        .pagination-btn {
+            padding: 8px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background-color: #fff;
+            color: #4a5568;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .pagination-btn:not(:disabled):hover {
+            background-color: #4299e1;
+            color: #fff;
+            border-color: #4299e1;
+        }
+        .pagination-info {
+            padding: 8px 16px;
+            font-size: 14px;
+            color: #718096;
+        }
+        .empty-tip {
+            grid-column: 1/-1;
+            text-align: center;
+            padding: 80px 0;
+            color: #718096;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题 -->
+        <div class="page-header">
+            <h1 class="page-title">🏆 赛事信息中心</h1>
+            <p class="page-desc">一站式查看赛事详情、报名说明及官方链接</p>
+        </div>
+
+        <!-- 搜索组件 -->
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" id="searchInput" placeholder="请输入赛事名称搜索...">
+        </div>
+
+        <!-- 日历区域：居中；与赛事列表同层滚动，避免卡片滑入日历底部背后 -->
+        <div class="calendar-wrap">
+            <div class="calendar-outer">
+            <div class="calendar-container">
+                <div class="calendar-title">
+                    <span class="cal-title-text">📅 竞赛日历</span>
+                    <div class="cal-controls">
+                        <button type="button" class="cal-btn" id="calPrevBtn" title="上个月">‹</button>
+                        <select class="cal-select" id="calYearSelect" aria-label="选择年份"></select>
+                        <select class="cal-select" id="calMonthSelect" aria-label="选择月份"></select>
+                        <button type="button" class="cal-btn" id="calNextBtn" title="下个月">›</button>
+                        <span id="currentMonth" style="display:none"></span>
+                    </div>
+                </div>
+                <div class="calendar-week">
+                    <div class="calendar-week-item">周日</div>
+                    <div class="calendar-week-item">周一</div>
+                    <div class="calendar-week-item">周二</div>
+                    <div class="calendar-week-item">周三</div>
+                    <div class="calendar-week-item">周四</div>
+                    <div class="calendar-week-item">周五</div>
+                    <div class="calendar-week-item">周六</div>
+                </div>
+                <div class="calendar-days calendar-grid" id="calendarDays"></div>
+            </div>
+            </div>
+        </div>
+
+        <!-- 赛事列表区域 -->
+        <div class="event-section">
+            <div class="event-list" id="eventList"></div>
+
+            <!-- 分页控件 -->
+            <div class="pagination" id="pagination">
+                <button class="pagination-btn" id="prevBtn" disabled>上一页</button>
+                <span class="pagination-info" id="pageInfo">第 1 页 / 共 1 页</span>
+                <button class="pagination-btn" id="nextBtn" disabled>下一页</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/events_center.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问答历史 - 智能竞赛客服机器人</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/profile.css">
+    <link rel="stylesheet" href="/static/css/history.css">
+</head>
+<body class="profile-page">
+    <nav class="profile-nav">
+        <a href="/volc-kb" class="nav-brand">智能竞赛客服机器人</a>
+        <div class="nav-links">
+            <a href="/volc-kb">问答</a>
+            <a href="/history" class="active">历史记录</a>
+            <a href="/profile">个人资料</a>
+            <a href="#" id="logout">退出</a>
+        </div>
+    </nav>
+
+    <div class="history-container">
+        <div class="filter-bar">
+            <div class="filter-group">
+                <input type="text" id="filterKeyword" placeholder="搜索问题关键词...">
+            </div>
+            <div class="filter-group">
+                <select id="filterContest">
+                    <option value="">全部赛事</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <select id="filterType">
+                    <option value="">全部类型</option>
+                    <option value="visual">视觉类</option>
+                    <option value="text">纯文类</option>
+                </select>
+            </div>
+            <button class="btn-search" id="searchBtn">搜索</button>
+        </div>
+
+        <div class="history-list" id="historyList">
+            <div class="loading-hint">加载中...</div>
+        </div>
+
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+    <div class="modal-overlay" id="detailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>问答详情</h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-footer">
+                <button class="btn-primary" id="requeueBtn">一键重查</button>
+                <button class="btn-outline" id="closeModalBtn">关闭</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 图片预览器（复用问答页样式/交互） -->
+    <div id="imgViewer" class="img-viewer" aria-hidden="true">
+        <a class="img-viewer-btn img-viewer-download" id="imgViewerDownload" download title="下载">⬇</a>
+        <div class="img-viewer-btn img-viewer-close" id="imgViewerClose" title="关闭">&times;</div>
+        <div class="img-viewer-nav img-viewer-prev" id="imgViewerPrev" title="上一张">&lt;</div>
+        <div class="img-viewer-nav img-viewer-next" id="imgViewerNext" title="下一张">&gt;</div>
+        <div class="img-viewer-panel" role="dialog" aria-modal="true">
+            <div class="img-viewer-meta" id="imgViewerMeta"></div>
+            <img id="imgViewerImg" alt="预览图">
+        </div>
+    </div>
+
+    <script src="/static/js/logger.js"></script>
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/history.js"></script>
+</body>
+</html>
