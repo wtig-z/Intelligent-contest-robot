@@ -74,3 +74,8 @@ _vector_db这个不用看，写论文用的
 VIDORAG和GRAPHRAG就是在backend文件夹里各自作为一个算法包在架构里
 MinerU实际上在这里没用到，主要写论文用的
 火山的就几个脚本很好区分一般是volc_kb_chat有v和k的
+
+
+关于数据（pdf sqlite 向量 图谱 图 pdf等我传到百度云了）链接：
+通过网盘分享的文件：data_backup.tar.gz
+链接: https://pan.baidu.com/s/1ce3ZCs1E6BTfuMqd6C2qEA?pwd=ttjf 提取码: ttjf 复制这段内容后打开百度网盘手机App，操作更方便哦
